@@ -1,171 +1,784 @@
-GYMSHARK ONYX V5.0 RESTOCKED
-LIFTED
-Shop
-About
-Size Guide
-FAQ
-Contact
-Premium Gymwear
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIFTED | Premium Gym Wear</title>
+    <meta name="description" content="LIFTED premium gym wear storefront.">
+    <meta name="theme-color" content="#0b0d10">
+    <meta property="og:title" content="LIFTED | Premium Gym Wear">
+    <meta property="og:description" content="Premium gym wear, cleaner design, stronger brand presence.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0d10'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='30' fill='%23c9a05f'%3EL%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Prata&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0b0d10;
+            --bg-soft: #12161b;
+            --panel: rgba(18, 22, 27, 0.78);
+            --line: rgba(255, 255, 255, 0.08);
+            --text: #f2efe9;
+            --muted: #a8adaf;
+            --gold: #c9a05f;
+            --gold-soft: rgba(201, 160, 95, 0.16);
+            --shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+            --radius: 24px;
+        }
 
-Lifted, rebuilt with a cleaner premium look.
-Same Lifted identity, same current shirts, but with a more polished landing page that feels ready to share online from a single file.
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Manrope', sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at 15% 20%, rgba(201, 160, 95, 0.14), transparent 25%),
+                radial-gradient(circle at 80% 15%, rgba(255, 255, 255, 0.06), transparent 18%),
+                radial-gradient(circle at 70% 80%, rgba(201, 160, 95, 0.08), transparent 25%),
+                linear-gradient(180deg, #0a0c0f 0%, #0d1115 50%, #0a0c0f 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
 
-Shop Collection
-Reserve Now
-3
-Current shirts
-$19.99
-Starting price
-80/20
-Performance blend
-2026
-Spring drop
-Lifted hero image
-Current Drop
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 72px 72px;
+            mask-image: radial-gradient(circle at center, black 35%, transparent 85%);
+            pointer-events: none;
+            z-index: -1;
+        }
 
-Onyx 5.0 Collection
-Sharper cards, cleaner spacing, stronger typography, and the same current shirts from the store.
+        a { color: inherit; text-decoration: none; }
+        img { display: block; width: 100%; }
 
-RestockedGymshark Onyx 5.0 Black
-Gymshark Onyx 5.0 Black
-A sharp black training tee built for heavy sessions and clean daily fits.
+        .container {
+            width: min(1160px, calc(100% - 2rem));
+            margin: 0 auto;
+        }
 
-$19.99
-$24.99
-Sizes: S, M, L, XL, 2XL
+        .topbar {
+            padding: 0.95rem 1rem;
+            text-align: center;
+            font-size: 0.75rem;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: var(--gold);
+            border-bottom: 1px solid var(--line);
+            background: rgba(7, 9, 11, 0.72);
+            backdrop-filter: blur(14px);
+        }
 
-Best SellerGymshark Onyx 5.0 Gray
-Gymshark Onyx 5.0 Gray
-Balanced stretch, lightweight structure, and a neutral tone that works everywhere.
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            backdrop-filter: blur(18px);
+            background: rgba(11, 13, 16, 0.7);
+            border-bottom: 1px solid var(--line);
+        }
 
-$19.99
-$24.99
-Sizes: S, M, L
+        .navbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1rem 0;
+        }
 
-Limited DropGymshark Onyx 5.0 Red
-Gymshark Onyx 5.0 Red
-A bold red colorway with the same breathable build and gym-ready comfort.
+        .brand {
+            font-family: 'Prata', serif;
+            font-size: 1.7rem;
+            letter-spacing: 0.28em;
+        }
 
-$19.99
-$24.99
-Sizes: S, M, L, XL, 2XL
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
 
-Drop Timer
+        .nav-links a:hover { color: var(--text); }
 
-Next Release Countdown
-Built into this single page so the site still feels dynamic even without a backend.
+        .hero {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 2rem;
+            align-items: center;
+            min-height: calc(100vh - 130px);
+            padding: 3rem 0 2rem;
+        }
 
-5
-Days
-9
-Hours
-48
-Minutes
-31
-Seconds
-Dropping Next
+        .eyebrow {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            font-size: 0.72rem;
+            margin-bottom: 1rem;
+        }
 
-Live teaser section
-I added the same public autoplay teaser video from the old Shopify site, but placed it in a cleaner premium section.
+        h1, h2, h3 { font-family: 'Prata', serif; font-weight: 400; }
 
-Coming Soon
-Stay tuned for our next exclusive drop.
-This section keeps the motion from the old store, but presents it in a cleaner layout with better spacing, clearer messaging, and a stronger premium feel.
+        h1 {
+            font-size: clamp(3rem, 8vw, 5.7rem);
+            line-height: 0.94;
+            margin-bottom: 1rem;
+        }
 
-Get Notified
-Why Lifted
+        h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            line-height: 0.98;
+        }
 
-The Lifted Standard
-Simple value props that make the page feel more complete and professional.
+        h3 {
+            font-size: 1.35rem;
+        }
 
-Premium Quality
-80% polyester and 20% nylon for performance, comfort, and everyday wear.
+        p {
+            color: var(--muted);
+            line-height: 1.75;
+        }
 
-Limited Drops
-A tighter collection strategy that keeps the brand feeling exclusive.
+        .hero-copy p { max-width: 620px; }
 
-Fast Contact
-Built for direct Instagram or message-based reservations and inquiries.
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
 
-About
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 170px;
+            padding: 1rem 1.25rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border: 1px solid var(--line);
+            transition: 0.25s ease;
+        }
 
-Built different. Built Lifted.
-A stronger brand section makes the store feel less basic and more trustworthy.
+        .button.primary {
+            background: linear-gradient(135deg, #deb87b 0%, var(--gold) 100%);
+            color: #111;
+            border: none;
+        }
 
-LIFTED is built around premium gymwear with a sharper visual identity. This version keeps the core products but upgrades the experience into a cleaner, more premium digital storefront that works well as a single uploaded file.
+        .button.secondary {
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text);
+        }
 
-2026
-Brand momentum
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25);
+        }
 
-3K+
-Customer energy
+        .hero-stats,
+        .product-grid,
+        .review-grid,
+        .info-grid,
+        .contact-grid {
+            display: grid;
+            gap: 1rem;
+        }
 
-50+
-Countries reached
+        .hero-stats {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            margin-top: 1rem;
+        }
 
-Lifted lifestyle visual
-Size Guide
+        .card,
+        .product-card,
+        .review-card,
+        .info-card,
+        .contact-card,
+        .hero-media {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(14px);
+        }
 
-Find Your Fit
-Helpful sizing info keeps the store practical, not just stylish.
+        .hero-media {
+            padding: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
 
-Size	Chest	Length	Fit
-S	34-36	26	Regular
-M	38-40	27	Regular
-L	42-44	28	Regular
-XL	46-48	29	Regular
-2XL	50-52	30	Regular
-FAQ
+        .hero-media::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, transparent 20%, rgba(255,255,255,0.1) 45%, transparent 70%);
+            transform: translateX(-120%);
+            animation: shine 8s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 2;
+        }
 
-Common Questions
-Enough answers to make the page feel ready for visitors.
+        .hero-media::after {
+            content: "";
+            position: absolute;
+            inset: auto -15% -35% auto;
+            width: 280px;
+            height: 280px;
+            background: radial-gradient(circle, rgba(201,160,95,0.22), transparent 70%);
+            pointer-events: none;
+        }
 
-How long does shipping take?
-Standard shipping usually takes 5-10 business days depending on location.
+        .hero-media img {
+            border-radius: 18px;
+            min-height: 560px;
+            object-fit: cover;
+            object-position: center top;
+            transform: scale(1.08);
+            animation: livePhoto 14s ease-in-out infinite;
+        }
 
-Do you ship worldwide?
-Yes, the store layout supports a global audience and limited product drops.
+        @keyframes livePhoto {
+            0%, 100% { transform: scale(1.08) translate3d(0, 0, 0); }
+            25% { transform: scale(1.12) translate3d(-1.5%, -1%, 0); }
+            50% { transform: scale(1.1) translate3d(1.5%, -2%, 0); }
+            75% { transform: scale(1.13) translate3d(-1%, 1%, 0); }
+        }
 
-What if I am between sizes?
-Go one size up for a more relaxed fit, or stay true to size for a regular athletic fit.
+        @keyframes shine {
+            0%, 75%, 100% { transform: translateX(-120%); }
+            35%, 55% { transform: translateX(120%); }
+        }
 
-Reviews
+        .stat {
+            padding: 1rem;
+            text-align: center;
+        }
 
-What Customers Say
-Real social proof from the current public storefront.
+        .stat strong {
+            display: block;
+            color: var(--text);
+            font-size: 1.3rem;
+            margin-bottom: 0.25rem;
+        }
 
-Mhmd Arnaout
-Mhmd Arnaout
-"Perfect."
+        .section-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 1rem;
+            padding: 4rem 0 1.5rem;
+            border-top: 1px solid var(--line);
+        }
 
-Mohammad
-Mohammad
-"shi mratab."
+        .section-head p { max-width: 420px; }
 
-Ahmad
-Ahmad
-"Quality mratabe."
+        .product-grid,
+        .review-grid,
+        .info-grid,
+        .contact-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
 
-Contact
+        .product-card,
+        .review-card,
+        .info-card,
+        .contact-card {
+            padding: 1rem;
+        }
 
-Reserve Your Piece
-Direct contact block for Instagram, inquiries, and quick reservations.
+        .contact-card.link-card {
+            transition: 0.25s ease;
+        }
 
-Instagram
-@lifted.lb
+        .contact-card.link-card:hover {
+            border-color: rgba(201, 160, 95, 0.45);
+            transform: translateY(-2px);
+        }
 
-Launch Date
-April 30, 2026
+        .contact-card.link-card a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
 
-Quick Message
-Your name
-Size, color, or question...
-Send
-Newsletter
+        .product-card img {
+            border-radius: 18px;
+            min-height: 310px;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
 
-Join The Drop List
-Simple signup block to capture interest before the next launch.
+        .badge {
+            display: inline-block;
+            margin-bottom: 0.75rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            background: var(--gold-soft);
+            color: var(--gold);
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
 
-Your email
-Subscribe
-LIFTED - clean one-page version ready to upload as a single `index.html`.
+        .price {
+            display: flex;
+            gap: 0.8rem;
+            align-items: center;
+            margin: 1rem 0 0.6rem;
+        }
+
+        .price strong { color: var(--gold); font-size: 1.1rem; }
+        .price span { color: #6d7377; text-decoration: line-through; }
+
+        .countdown-wrap,
+        .newsletter,
+        .video-feature {
+            padding: 1.4rem;
+        }
+
+        .countdown {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .count-box {
+            text-align: center;
+            padding: 1rem;
+            border-radius: 18px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--line);
+        }
+
+        .count-box strong {
+            display: block;
+            font-size: 2.2rem;
+            color: var(--gold);
+        }
+
+        .newsletter form,
+        .contact-form {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1.2rem;
+        }
+
+        .newsletter-row {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 1rem;
+        }
+
+        .video-shell {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 1.25rem;
+            align-items: center;
+        }
+
+        .video-frame {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            border: 1px solid var(--line);
+            background: #000;
+        }
+
+        .video-frame video {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+        }
+
+        .video-copy {
+            display: grid;
+            gap: 0.8rem;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 16px;
+            border: 1px solid var(--line);
+            background: rgba(255,255,255,0.04);
+            color: var(--text);
+            font: inherit;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: rgba(201,160,95,0.55);
+        }
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about img {
+            border-radius: var(--radius);
+            min-height: 450px;
+            object-fit: cover;
+        }
+
+        .faq-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            padding: 1.2rem 1.3rem;
+        }
+
+        .faq-item h3 { margin-bottom: 0.5rem; }
+
+        .size-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .size-table th,
+        .size-table td {
+            border: 1px solid var(--line);
+            padding: 0.95rem;
+            text-align: center;
+        }
+
+        .size-table th {
+            color: var(--gold);
+            background: rgba(201,160,95,0.08);
+        }
+
+        .review-card img {
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+            border: 2px solid var(--gold);
+        }
+
+        .footer {
+            padding: 3rem 0 4rem;
+            color: #7d8387;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 920px) {
+            .hero,
+            .about,
+            .section-head,
+            .navbar-inner,
+            .newsletter-row {
+                grid-template-columns: 1fr;
+                display: grid;
+            }
+
+            .nav-links,
+            .navbar-inner { justify-content: start; }
+
+            .hero-stats,
+            .countdown,
+            .product-grid,
+            .review-grid,
+            .info-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-media img,
+            .about img { min-height: 360px; }
+
+            .video-shell,
+            .newsletter-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="topbar">GYMSHARK ONYX V5.0 RESTOCKED</div>
+
+    <nav class="navbar">
+        <div class="container navbar-inner">
+            <a href="#home" class="brand">LIFTED</a>
+            <div class="nav-links">
+                <a href="#shop">Shop</a>
+                <a href="#about">About</a>
+                <a href="#size-guide">Size Guide</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="home" class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">Premium Gymwear</p>
+                <h1>Lifted, rebuilt with a cleaner premium look.</h1>
+                <p>Same Lifted identity, same current shirts, but with a more polished landing page that feels ready to share online from a single file.</p>
+                <div class="actions">
+                    <a href="#shop" class="button primary">Shop Collection</a>
+                    <a href="#contact" class="button secondary">Reserve Now</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="card stat"><strong>3</strong><span>Current shirts</span></div>
+                    <div class="card stat"><strong>$19.99</strong><span>Starting price</span></div>
+                    <div class="card stat"><strong>80/20</strong><span>Performance blend</span></div>
+                    <div class="card stat"><strong>2026</strong><span>Spring drop</span></div>
+                </div>
+            </div>
+            <div class="hero-media">
+                <img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsApp_Image_2026-04-06_at_5.00.11_PM_9406920f-480a-4466-9974-863124a109bf.jpg?v=1775523675&width=1600" alt="Lifted hero image">
+            </div>
+        </section>
+
+        <section class="section-head" id="shop">
+            <div>
+                <p class="eyebrow">Current Drop</p>
+                <h2>Onyx 5.0 Collection</h2>
+            </div>
+            <p>Sharper cards, cleaner spacing, stronger typography, and the same current shirts from the store.</p>
+        </section>
+
+        <section class="product-grid">
+            <article class="product-card">
+                <span class="badge">Restocked</span>
+                <img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsAppImage2026-04-06at5.31.15PM.jpg?v=1775525499&width=1200" alt="Gymshark Onyx 5.0 Black">
+                <h3>Gymshark Onyx 5.0 Black</h3>
+                <p>A sharp black training tee built for heavy sessions and clean daily fits.</p>
+                <div class="price"><strong>$19.99</strong><span>$24.99</span></div>
+                <p>Sizes: S, M, L, XL, 2XL</p>
+            </article>
+
+            <article class="product-card">
+                <span class="badge">Best Seller</span>
+                <img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsAppImage2026-04-06at5.31.20PM_1.jpg?v=1775529938&width=1200" alt="Gymshark Onyx 5.0 Gray">
+                <h3>Gymshark Onyx 5.0 Gray</h3>
+                <p>Balanced stretch, lightweight structure, and a neutral tone that works everywhere.</p>
+                <div class="price"><strong>$19.99</strong><span>$24.99</span></div>
+                <p>Sizes: S, M, L</p>
+            </article>
+
+            <article class="product-card">
+                <span class="badge">Limited Drop</span>
+                <img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsAppImage2026-04-06at5.31.18PM.jpg?v=1775525908&width=1200" alt="Gymshark Onyx 5.0 Red">
+                <h3>Gymshark Onyx 5.0 Red</h3>
+                <p>A bold red colorway with the same breathable build and gym-ready comfort.</p>
+                <div class="price"><strong>$19.99</strong><span>$24.99</span></div>
+                <p>Sizes: S, M, L, XL, 2XL</p>
+            </article>
+        </section>
+
+        <section class="section-head">
+            <div>
+                <p class="eyebrow">Drop Timer</p>
+                <h2>Next Release Countdown</h2>
+            </div>
+            <p>Built into this single page so the site still feels dynamic even without a backend.</p>
+        </section>
+
+        <section class="card countdown-wrap">
+            <div class="countdown">
+                <div class="count-box"><strong id="days">0</strong><span>Days</span></div>
+                <div class="count-box"><strong id="hours">0</strong><span>Hours</span></div>
+                <div class="count-box"><strong id="mins">0</strong><span>Minutes</span></div>
+                <div class="count-box"><strong id="secs">0</strong><span>Seconds</span></div>
+            </div>
+        </section>
+
+        <section class="section-head">
+            <div>
+                <p class="eyebrow">Dropping Next</p>
+                <h2>Live teaser section</h2>
+            </div>
+            <p>I added the same public autoplay teaser video from the old Shopify site, but placed it in a cleaner premium section.</p>
+        </section>
+
+        <section class="card video-feature">
+            <div class="video-shell">
+                <div class="video-frame">
+                    <video autoplay muted loop playsinline preload="metadata" poster="https://liftedlb.myshopify.com/cdn/shop/files/preview_images/1e49098305b54d39bc9f5a905d691493.thumbnail.0000000000_800x.jpg?v=1775671404">
+                        <source src="https://liftedlb.myshopify.com/cdn/shop/videos/c/vp/1e49098305b54d39bc9f5a905d691493/1e49098305b54d39bc9f5a905d691493.HD-1080p-2.5Mbps-80742791.mp4?v=0" type="video/mp4">
+                        <img src="https://liftedlb.myshopify.com/cdn/shop/files/preview_images/1e49098305b54d39bc9f5a905d691493.thumbnail.0000000000_800x.jpg?v=1775671404" alt="Lifted upcoming drop preview">
+                    </video>
+                </div>
+                <div class="video-copy">
+                    <span class="badge">Coming Soon</span>
+                    <h3>Stay tuned for our next exclusive drop.</h3>
+                    <p>This section keeps the motion from the old store, but presents it in a cleaner layout with better spacing, clearer messaging, and a stronger premium feel.</p>
+                    <a href="#contact" class="button primary">Get Notified</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-head">
+            <div>
+                <p class="eyebrow">Why Lifted</p>
+                <h2>The Lifted Standard</h2>
+            </div>
+            <p>Simple value props that make the page feel more complete and professional.</p>
+        </section>
+
+        <section class="info-grid">
+            <article class="info-card"><h3>Premium Quality</h3><p>80% polyester and 20% nylon for performance, comfort, and everyday wear.</p></article>
+            <article class="info-card"><h3>Limited Drops</h3><p>A tighter collection strategy that keeps the brand feeling exclusive.</p></article>
+            <article class="info-card"><h3>Fast Contact</h3><p>Built for direct Instagram or message-based reservations and inquiries.</p></article>
+        </section>
+
+        <section class="section-head" id="about">
+            <div>
+                <p class="eyebrow">About</p>
+                <h2>Built different. Built Lifted.</h2>
+            </div>
+            <p>A stronger brand section makes the store feel less basic and more trustworthy.</p>
+        </section>
+
+        <section class="about">
+            <div class="card" style="padding:1.4rem;">
+                <p>LIFTED is built around premium gymwear with a sharper visual identity. This version keeps the core products but upgrades the experience into a cleaner, more premium digital storefront that works well as a single uploaded file.</p>
+                <div class="info-grid" style="grid-template-columns:repeat(3, minmax(0, 1fr)); margin-top:1rem;">
+                    <article class="info-card"><h3>2026</h3><p>Brand momentum</p></article>
+                    <article class="info-card"><h3>3K+</h3><p>Customer energy</p></article>
+                    <article class="info-card"><h3>50+</h3><p>Countries reached</p></article>
+                </div>
+            </div>
+            <img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsApp_Image_2026-04-06_at_5.00.11_PM_9406920f-480a-4466-9974-863124a109bf.jpg?v=1775523675&width=1200" alt="Lifted lifestyle visual">
+        </section>
+
+        <section class="section-head" id="size-guide">
+            <div>
+                <p class="eyebrow">Size Guide</p>
+                <h2>Find Your Fit</h2>
+            </div>
+            <p>Helpful sizing info keeps the store practical, not just stylish.</p>
+        </section>
+
+        <section class="card" style="padding:1.4rem; overflow:auto;">
+            <table class="size-table">
+                <thead>
+                    <tr><th>Size</th><th>Chest</th><th>Length</th><th>Fit</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>S</td><td>34-36</td><td>26</td><td>Regular</td></tr>
+                    <tr><td>M</td><td>38-40</td><td>27</td><td>Regular</td></tr>
+                    <tr><td>L</td><td>42-44</td><td>28</td><td>Regular</td></tr>
+                    <tr><td>XL</td><td>46-48</td><td>29</td><td>Regular</td></tr>
+                    <tr><td>2XL</td><td>50-52</td><td>30</td><td>Regular</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="section-head" id="faq">
+            <div>
+                <p class="eyebrow">FAQ</p>
+                <h2>Common Questions</h2>
+            </div>
+            <p>Enough answers to make the page feel ready for visitors.</p>
+        </section>
+
+        <section class="faq-list">
+            <article class="card faq-item"><h3>How long does shipping take?</h3><p>Standard shipping usually takes 5-10 business days depending on location.</p></article>
+            <article class="card faq-item"><h3>Do you ship worldwide?</h3><p>Yes, the store layout supports a global audience and limited product drops.</p></article>
+            <article class="card faq-item"><h3>What if I am between sizes?</h3><p>Go one size up for a more relaxed fit, or stay true to size for a regular athletic fit.</p></article>
+        </section>
+
+        <section class="section-head">
+            <div>
+                <p class="eyebrow">Reviews</p>
+                <h2>What Customers Say</h2>
+            </div>
+            <p>Real social proof from the current public storefront.</p>
+        </section>
+
+        <section class="review-grid">
+            <article class="review-card"><img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsApp_Image_2026-04-17_at_14.51.48_aec4794c-a997-40fd-a2d3-42b0b3575ce3.jpg?v=1776463580&width=600" alt="Mhmd Arnaout"><h3>Mhmd Arnaout</h3><p>"Perfect."</p></article>
+            <article class="review-card"><img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsApp_Image_2026-04-18_at_08.53.43.jpg?v=1776527880&width=600" alt="Mohammad"><h3>Mohammad</h3><p>"shi mratab."</p></article>
+            <article class="review-card"><img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsApp_Image_2026-04-17_at_14.54.06.jpg?v=1776527454&width=600" alt="Ahmad"><h3>Ahmad</h3><p>"Quality mratabe."</p></article>
+        </section>
+
+        <section class="section-head" id="contact">
+            <div>
+                <p class="eyebrow">Contact</p>
+                <h2>Reserve Your Piece</h2>
+            </div>
+            <p>Direct contact block for Instagram, inquiries, and quick reservations.</p>
+        </section>
+
+        <section class="contact-grid">
+            <article class="contact-card link-card"><a href="https://www.instagram.com/lifted.lb?igsh=aDU5Y20xcjZ3Ymg0" target="_blank" rel="noopener noreferrer"><h3>Instagram</h3><p>@lifted.lb</p></a></article>
+            <article class="contact-card"><h3>Launch Date</h3><p>April 30, 2026</p></article>
+            <article class="contact-card">
+                <h3>Quick Message</h3>
+                <form class="contact-form" onsubmit="event.preventDefault(); this.innerHTML='<p style=&quot;color:var(--gold)&quot;>Thanks, your message is ready.</p>';">
+                    <input type="text" placeholder="Your name" required>
+                    <textarea rows="4" placeholder="Size, color, or question..."></textarea>
+                    <button class="button primary" type="submit">Send</button>
+                </form>
+            </article>
+        </section>
+
+        <section class="section-head">
+            <div>
+                <p class="eyebrow">Newsletter</p>
+                <h2>Join The Drop List</h2>
+            </div>
+            <p>Simple signup block to capture interest before the next launch.</p>
+        </section>
+
+        <section class="card newsletter">
+            <form onsubmit="event.preventDefault(); this.innerHTML='<p style=&quot;color:var(--gold)&quot;>You are on the list.</p>';">
+                <div class="newsletter-row">
+                    <input type="email" placeholder="Your email" required>
+                    <button class="button primary" type="submit">Subscribe</button>
+                </div>
+            </form>
+        </section>
+
+        <div class="footer">
+            <strong>LIFTED</strong> - clean one-page version ready to upload as a single `index.html`.
+        </div>
+    </main>
+
+    <script>
+        function updateCountdown() {
+            const dropDate = new Date('2026-04-30T00:00:00');
+            const now = new Date();
+            const diff = Math.max(0, dropDate - now);
+            const values = {
+                days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+                hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+                mins: Math.floor((diff / (1000 * 60)) % 60),
+                secs: Math.floor((diff / 1000) % 60)
+            };
+            Object.entries(values).forEach(([key, value]) => {
+                const el = document.getElementById(key);
+                if (el) el.textContent = value;
+            });
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
