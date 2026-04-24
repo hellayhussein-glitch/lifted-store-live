@@ -1,296 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIFTED | One Page</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Cormorant+Garamond:wght@500;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
-    <style>
-        :root { --ink:#0a0a0a; --cream:#f5f0e8; --gold:#c9a227; --crimson:#8b1538; }
-        * { box-sizing:border-box; margin:0; padding:0; }
-        html { scroll-behavior:smooth; }
-        body { font-family:'Space Grotesk',sans-serif; color:var(--cream); background:#0d0b09; overflow-x:hidden; }
-        .bg,.grid,.glow { position:fixed; inset:0; pointer-events:none; }
-        .bg { z-index:-10; }
-        .bg::before { content:''; position:absolute; inset:-50%; background:radial-gradient(circle at 20% 20%, rgba(201,162,39,.14), transparent 35%), radial-gradient(circle at 80% 70%, rgba(139,21,56,.12), transparent 35%), radial-gradient(circle at 60% 40%, rgba(70,110,90,.10), transparent 30%); animation:drift 18s ease-in-out infinite; }
-        .grid { z-index:-9; background-image:linear-gradient(rgba(201,162,39,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(201,162,39,.03) 1px, transparent 1px); background-size:60px 60px; animation:gridmove 40s linear infinite; }
-        .glow { z-index:-8; background:radial-gradient(circle at 50% 35%, rgba(201,162,39,.08), transparent 30%); animation:pulse 8s ease-in-out infinite; }
-        @keyframes drift { 0%,100% { transform:translate(0,0) scale(1); } 50% { transform:translate(2%,3%) scale(1.08); } }
-        @keyframes gridmove { from { transform:translate(0,0); } to { transform:translate(60px,60px); } }
-        @keyframes pulse { 0%,100% { opacity:.5; } 50% { opacity:.9; } }
-        a { color:inherit; text-decoration:none; }
-        img { width:100%; display:block; }
-        .container { width:min(1180px, calc(100% - 2rem)); margin:0 auto; }
-        .topbar { padding:1rem; text-align:center; letter-spacing:.22em; font-size:.74rem; color:var(--gold); border-bottom:1px solid rgba(201,162,39,.18); background:rgba(0,0,0,.4); }
-        .navbar { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1.2rem 0; border-bottom:1px solid rgba(255,255,255,.06); position:sticky; top:0; backdrop-filter:blur(14px); background:rgba(13,11,9,.72); z-index:20; }
-        .brand { font-family:'Oswald',sans-serif; font-size:2rem; letter-spacing:.2em; background:linear-gradient(135deg,var(--gold),#f0d99c,var(--gold)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-        .nav-links { display:flex; gap:1rem; flex-wrap:wrap; }
-        .nav-links a { color:#b7aea1; font-size:.95rem; }
-        .nav-links a:hover { color:var(--cream); }
-        section { position:relative; z-index:1; }
-        .hero { display:grid; grid-template-columns:1.1fr .9fr; gap:2rem; align-items:center; min-height:82vh; padding:4rem 0 2rem; }
-        .eyebrow { color:var(--gold); text-transform:uppercase; letter-spacing:.22em; font-size:.72rem; margin-bottom:.8rem; }
-        h1,h2,h3 { font-family:'Cormorant Garamond',serif; color:var(--cream); }
-        h1 { font-size:clamp(3.2rem,9vw,6.3rem); line-height:.92; }
-        h2 { font-size:clamp(2.2rem,5vw,3.8rem); line-height:1; }
-        h3 { font-size:1.4rem; }
-        .lede,.muted,p { color:#a89f94; line-height:1.75; }
-        .hero-card,.panel,.product-card,.mini,.review-card,.faq-item,.size-card,.contact-card { background:rgba(26,23,20,.72); border:1px solid rgba(255,255,255,.06); border-radius:14px; }
-        .hero-card { padding:1rem; }
-        .hero-card img { border-radius:10px; min-height:520px; object-fit:cover; }
-        .actions,.stats,.product-grid,.mini-grid,.review-grid,.size-grid,.contact-grid { display:grid; gap:1rem; }
-        .actions { grid-template-columns:repeat(2,minmax(0,1fr)); margin:1.8rem 0; max-width:420px; }
-        .button { display:inline-flex; align-items:center; justify-content:center; padding:1rem 1.2rem; border-radius:6px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; font-size:.85rem; border:1px solid rgba(201,162,39,.35); }
-        .button.primary { background:linear-gradient(135deg,var(--gold),#a88520); color:#0b0b0b; border:none; }
-        .button.secondary { color:var(--cream); background:rgba(255,255,255,.03); }
-        .stats { grid-template-columns:repeat(4,minmax(0,1fr)); }
-        .mini { padding:1rem; text-align:center; }
-        .mini strong { display:block; color:var(--cream); font-family:'Oswald',sans-serif; font-size:1.4rem; }
-        .section-head { display:flex; justify-content:space-between; gap:1rem; align-items:end; padding:3.2rem 0 1.2rem; border-top:1px solid rgba(255,255,255,.06); }
-        .product-grid,.review-grid,.size-grid,.contact-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
-        .product-card,.review-card,.size-card,.contact-card { padding:1rem; }
-        .product-card img { border-radius:10px; min-height:300px; object-fit:cover; margin-bottom:1rem; }
-        .badge { display:inline-block; margin-bottom:.8rem; background:linear-gradient(135deg,var(--crimson),#5d0e24); color:#fff; padding:.35rem .7rem; border-radius:4px; font-size:.72rem; text-transform:uppercase; }
-        .price { margin:1rem 0; display:flex; gap:.8rem; align-items:center; }
-        .price strong { color:var(--gold); font-size:1.15rem; }
-        .price span { color:#635d56; text-decoration:line-through; }
-        .countdown { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1rem; text-align:center; padding:2rem 0; }
-        .count-num { font-size:2.8rem; font-family:'Oswald',sans-serif; color:var(--gold); }
-        .newsletter { padding:2rem; text-align:center; }
-        .newsletter form { display:grid; grid-template-columns:1fr auto; gap:1rem; max-width:560px; margin:1rem auto 0; }
-        input, textarea, select { width:100%; padding:1rem; border-radius:8px; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.04); color:var(--cream); font:inherit; }
-        .about-wrap { display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:center; padding-bottom:1rem; }
-        .about-wrap img { border-radius:12px; min-height:420px; object-fit:cover; }
-        .faq-list { display:grid; gap:1rem; }
-        .faq-item { padding:1rem 1.2rem; }
-        .size-table { width:100%; border-collapse:collapse; margin-top:1rem; }
-        .size-table th,.size-table td { border:1px solid rgba(255,255,255,.08); padding:.9rem; text-align:center; }
-        .size-table th { color:var(--gold); background:rgba(201,162,39,.08); }
-        .review-card img { width:78px; height:78px; border-radius:50%; object-fit:cover; margin:0 auto 1rem; border:2px solid var(--gold); }
-        .footer { padding:3rem 0; border-top:1px solid rgba(255,255,255,.06); margin-top:3rem; color:#7d766d; }
-        .footer strong { color:var(--cream); }
-        @media (max-width: 900px) {
-            .hero,.about-wrap,.section-head,.navbar { grid-template-columns:1fr; display:grid; }
-            .stats,.countdown,.product-grid,.review-grid,.size-grid,.contact-grid,.actions,.newsletter form { grid-template-columns:1fr; }
-            .nav-links { gap:.7rem; }
-        }
-    </style>
-</head>
-<body>
-    <div class="bg"></div>
-    <div class="grid"></div>
-    <div class="glow"></div>
 
-    <div class="topbar">GYMSHARK ONYX V5.0 RESTOCKED</div>
-    <nav class="navbar container">
-        <a href="#home" class="brand">LIFTED</a>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#shop">Shop</a>
-            <a href="#about">About</a>
-            <a href="#size-guide">Size Guide</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
+GYMSHARK ONYX V5.0 RESTOCKED
+LIFTED
+Home
+Shop
+About
+Size Guide
+FAQ
+Contact
+Fuel Your Ambition
 
-    <main class="container">
-        <section id="home" class="hero">
-            <div>
-                <p class="eyebrow">Fuel Your Ambition</p>
-                <h1>LIFTED<br>Premium Drop</h1>
-                <p class="lede" style="margin:1rem 0;">A cleaner, stronger, more professional version of the Lifted store with the same shirts, richer visuals, and one single file that is easier to upload for phone viewing.</p>
-                <div class="actions">
-                    <a href="#shop" class="button primary">Shop Now</a>
-                    <a href="#contact" class="button secondary">Notify Me</a>
-                </div>
-                <div class="stats">
-                    <div class="mini"><strong id="days-mini">0</strong><span>Days</span></div>
-                    <div class="mini"><strong id="hours-mini">0</strong><span>Hours</span></div>
-                    <div class="mini"><strong id="mins-mini">0</strong><span>Mins</span></div>
-                    <div class="mini"><strong id="secs-mini">0</strong><span>Secs</span></div>
-                </div>
-            </div>
-            <div class="hero-card">
-                <img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsApp_Image_2026-04-06_at_5.00.11_PM_9406920f-480a-4466-9974-863124a109bf.jpg?v=1775523675&width=1600" alt="Lifted hero">
-            </div>
-        </section>
+LIFTED
+Premium Drop
+A cleaner, stronger, more professional version of the Lifted store with the same shirts, richer visuals, and one single file that is easier to upload for phone viewing.
 
-        <section class="section-head" id="shop">
-            <div>
-                <p class="eyebrow">Current Drop</p>
-                <h2>Onyx 5.0 Collection</h2>
-            </div>
-            <p class="muted">Three shirts, improved presentation, one-page experience.</p>
-        </section>
-        <section class="product-grid">
-            <article class="product-card">
-                <span class="badge">Restocked</span>
-                <img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsAppImage2026-04-06at5.31.15PM.jpg?v=1775525499&width=1200" alt="Gymshark Onyx 5.0 Black">
-                <h3>Gymshark Onyx 5.0 Black</h3>
-                <p>A sharp black training tee built for heavy sessions and clean daily fits.</p>
-                <div class="price"><strong>$19.99</strong><span>$24.99</span></div>
-                <p>Sizes: S, M, L, XL, 2XL</p>
-            </article>
-            <article class="product-card">
-                <span class="badge">Best Seller</span>
-                <img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsAppImage2026-04-06at5.31.20PM_1.jpg?v=1775529938&width=1200" alt="Gymshark Onyx 5.0 Gray">
-                <h3>Gymshark Onyx 5.0 Gray</h3>
-                <p>Balanced stretch, lightweight structure, and a neutral tone that works everywhere.</p>
-                <div class="price"><strong>$19.99</strong><span>$24.99</span></div>
-                <p>Sizes: S, M, L</p>
-            </article>
-            <article class="product-card">
-                <span class="badge">Limited Drop</span>
-                <img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsAppImage2026-04-06at5.31.18PM.jpg?v=1775525908&width=1200" alt="Gymshark Onyx 5.0 Red">
-                <h3>Gymshark Onyx 5.0 Red</h3>
-                <p>A bold red colorway with the same breathable build and gym-ready comfort.</p>
-                <div class="price"><strong>$19.99</strong><span>$24.99</span></div>
-                <p>Sizes: S, M, L, XL, 2XL</p>
-            </article>
-        </section>
+Shop Now
+Notify Me
+5
+Days
+9
+Hours
+44
+Mins
+52
+Secs
+Lifted hero
+Current Drop
 
-        <section class="section-head">
-            <div>
-                <p class="eyebrow">Countdown</p>
-                <h2>Next Drop: April 30, 2026</h2>
-            </div>
-        </section>
-        <section class="panel">
-            <div class="countdown">
-                <div><div class="count-num" id="days">0</div><div class="muted">Days</div></div>
-                <div><div class="count-num" id="hours">0</div><div class="muted">Hours</div></div>
-                <div><div class="count-num" id="mins">0</div><div class="muted">Minutes</div></div>
-                <div><div class="count-num" id="secs">0</div><div class="muted">Seconds</div></div>
-            </div>
-        </section>
+Onyx 5.0 Collection
+Three shirts, improved presentation, one-page experience.
 
-        <section class="newsletter panel" style="margin-top:2rem;">
-            <p class="eyebrow">Stay Updated</p>
-            <h2>Join the Drop List</h2>
-            <p class="lede">One page, one upload, easier to publish.</p>
-            <form onsubmit="event.preventDefault(); this.innerHTML='<strong style=&quot;color:var(--gold)&quot;>Thanks, you are on the list.</strong>';">
-                <input type="email" placeholder="Your email" required>
-                <button class="button primary" type="submit">Subscribe</button>
-            </form>
-        </section>
+RestockedGymshark Onyx 5.0 Black
+Gymshark Onyx 5.0 Black
+A sharp black training tee built for heavy sessions and clean daily fits.
 
-        <section class="section-head" id="about">
-            <div>
-                <p class="eyebrow">About</p>
-                <h2>Built Different. Built Lifted.</h2>
-            </div>
-        </section>
-        <section class="about-wrap">
-            <div class="panel" style="padding:1.4rem;">
-                <p class="lede">LIFTED is built around premium gymwear, a sharper identity, and limited drops that feel intentional. This version adds a stronger brand story, better hierarchy, and a more premium visual atmosphere.</p>
-                <div class="mini-grid" style="margin-top:1rem;">
-                    <div class="mini"><strong>2026</strong><span>Founded</span></div>
-                    <div class="mini"><strong>3K+</strong><span>Customers</span></div>
-                    <div class="mini"><strong>50+</strong><span>Countries</span></div>
-                </div>
-            </div>
-            <img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsApp_Image_2026-04-06_at_5.00.11_PM_9406920f-480a-4466-9974-863124a109bf.jpg?v=1775523675&width=1200" alt="Lifted brand image">
-        </section>
+$19.99
+$24.99
+Sizes: S, M, L, XL, 2XL
 
-        <section class="section-head" id="size-guide">
-            <div>
-                <p class="eyebrow">Size Guide</p>
-                <h2>Find Your Fit</h2>
-            </div>
-        </section>
-        <section class="size-grid">
-            <div class="size-card" style="grid-column:1 / -1;">
-                <table class="size-table">
-                    <thead>
-                        <tr><th>Size</th><th>Chest</th><th>Length</th><th>Fit</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>S</td><td>34-36</td><td>26</td><td>Regular</td></tr>
-                        <tr><td>M</td><td>38-40</td><td>27</td><td>Regular</td></tr>
-                        <tr><td>L</td><td>42-44</td><td>28</td><td>Regular</td></tr>
-                        <tr><td>XL</td><td>46-48</td><td>29</td><td>Regular</td></tr>
-                        <tr><td>2XL</td><td>50-52</td><td>30</td><td>Regular</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+Best SellerGymshark Onyx 5.0 Gray
+Gymshark Onyx 5.0 Gray
+Balanced stretch, lightweight structure, and a neutral tone that works everywhere.
 
-        <section class="section-head" id="faq">
-            <div>
-                <p class="eyebrow">FAQ</p>
-                <h2>Common Questions</h2>
-            </div>
-        </section>
-        <section class="faq-list">
-            <div class="faq-item"><h3>How long does shipping take?</h3><p>Standard shipping takes 5-10 business days depending on location.</p></div>
-            <div class="faq-item"><h3>Do you ship worldwide?</h3><p>Yes, the store is prepared for international customers and limited-drop releases.</p></div>
-            <div class="faq-item"><h3>What if I am between sizes?</h3><p>Go one size up for a relaxed fit and true size for a regular athletic fit.</p></div>
-        </section>
+$19.99
+$24.99
+Sizes: S, M, L
 
-        <section class="section-head">
-            <div>
-                <p class="eyebrow">Reviews</p>
-                <h2>What Customers Say</h2>
-            </div>
-        </section>
-        <section class="review-grid">
-            <article class="review-card"><img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsApp_Image_2026-04-17_at_14.51.48_aec4794c-a997-40fd-a2d3-42b0b3575ce3.jpg?v=1776463580&width=600" alt="Mhmd Arnaout"><h3>Mhmd Arnaout</h3><p>"Perfect."</p></article>
-            <article class="review-card"><img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsApp_Image_2026-04-18_at_08.53.43.jpg?v=1776527880&width=600" alt="Mohammad"><h3>Mohammad</h3><p>"shi mratab."</p></article>
-            <article class="review-card"><img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsApp_Image_2026-04-17_at_14.54.06.jpg?v=1776527454&width=600" alt="Ahmad"><h3>Ahmad</h3><p>"Quality mratabe."</p></article>
-        </section>
+Limited DropGymshark Onyx 5.0 Red
+Gymshark Onyx 5.0 Red
+A bold red colorway with the same breathable build and gym-ready comfort.
 
-        <section class="section-head" id="contact">
-            <div>
-                <p class="eyebrow">Contact</p>
-                <h2>Reserve Your Piece</h2>
-            </div>
-        </section>
-        <section class="contact-grid">
-            <div class="contact-card">
-                <h3>Instagram</h3>
-                <p>@liftedlb</p>
-            </div>
-            <div class="contact-card">
-                <h3>Launch Date</h3>
-                <p>April 30, 2026</p>
-            </div>
-            <div class="contact-card">
-                <h3>Quick Message</h3>
-                <form onsubmit="event.preventDefault(); this.innerHTML='<strong style=&quot;color:var(--gold)&quot;>Message sent.</strong>';">
-                    <input type="text" placeholder="Your name" required style="margin-bottom:.6rem;">
-                    <textarea rows="4" placeholder="Size, color, question..."></textarea>
-                    <button class="button primary" type="submit" style="margin-top:.6rem; width:100%;">Send</button>
-                </form>
-            </div>
-        </section>
+$19.99
+$24.99
+Sizes: S, M, L, XL, 2XL
 
-        <div class="footer">
-            <strong>LIFTED</strong> - single-file version ready for easier upload.
-        </div>
-    </main>
+Countdown
 
-    <script>
-        function countdown() {
-            const dropDate = new Date('2026-04-30T00:00:00');
-            const now = new Date();
-            const diff = Math.max(0, dropDate - now);
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-            const mins = Math.floor((diff / (1000 * 60)) % 60);
-            const secs = Math.floor((diff / 1000) % 60);
-            ['days','hours','mins','secs'].forEach((id, i) => {
-                const values = [days, hours, mins, secs];
-                const el = document.getElementById(id);
-                const mini = document.getElementById(id + '-mini');
-                if (el) el.textContent = values[i];
-                if (mini) mini.textContent = values[i];
-            });
-        }
-        countdown();
-        setInterval(countdown, 1000);
-    </script>
-</body>
-</html>
+Next Drop: April 30, 2026
+5
+Days
+9
+Hours
+44
+Minutes
+52
+Seconds
+Stay Updated
+
+Join the Drop List
+One page, one upload, easier to publish.
+
+Your email
+Subscribe
+About
+
+Built Different. Built Lifted.
+LIFTED is built around premium gymwear, a sharper identity, and limited drops that feel intentional. This version adds a stronger brand story, better hierarchy, and a more premium visual atmosphere.
+
+2026
+Founded
+3K+
+Customers
+50+
+Countries
+Lifted brand image
+Size Guide
+
+Find Your Fit
+Size	Chest	Length	Fit
+S	34-36	26	Regular
+M	38-40	27	Regular
+L	42-44	28	Regular
+XL	46-48	29	Regular
+2XL	50-52	30	Regular
+FAQ
+
+Common Questions
+How long does shipping take?
+Standard shipping takes 5-10 business days depending on location.
+
+Do you ship worldwide?
+Yes, the store is prepared for international customers and limited-drop releases.
+
+What if I am between sizes?
+Go one size up for a relaxed fit and true size for a regular athletic fit.
+
+Reviews
+
+What Customers Say
+Mhmd Arnaout
+Mhmd Arnaout
+"Perfect."
+
+Mohammad
+Mohammad
+"shi mratab."
+
+Ahmad
+Ahmad
+"Quality mratabe."
+
+Contact
+
+Reserve Your Piece
+Instagram
+@liftedlb
+
+Launch Date
+April 30, 2026
+
+Quick Message
+Your name
+ 
+Size, color, question...
+ Send
+LIFTED - single-file version ready for easier upload.
