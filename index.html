@@ -4,39 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LIFTED | Premium Gym Wear</title>
-    <meta name="description" content="LIFTED premium gym wear storefront.">
+    <meta name="description" content="LIFTED premium gym wear storefront with direct WhatsApp and Instagram ordering.">
     <meta name="theme-color" content="#0b0d10">
     <meta property="og:title" content="LIFTED | Premium Gym Wear">
-    <meta property="og:description" content="Premium gym wear, cleaner design, stronger brand presence.">
+    <meta property="og:description" content="Premium gym wear with a sharper storefront, full hero motion, and direct ordering.">
     <meta property="og:type" content="website">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0d10'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='30' fill='%23c9a05f'%3EL%3C/text%3E%3C/svg%3E">
+    <link rel="icon" href="logo.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Prata&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0b0d10;
-            --bg-soft: #12161b;
-            --panel: rgba(18, 22, 27, 0.78);
-            --line: rgba(255, 255, 255, 0.08);
-            --text: #f2efe9;
-            --muted: #a8adaf;
-            --gold: #c9a05f;
-            --gold-soft: rgba(201, 160, 95, 0.16);
-            --shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
-            --radius: 24px;
+            --bg: #090b0d;
+            --bg-2: #111419;
+            --panel: rgba(16, 19, 24, 0.78);
+            --panel-strong: rgba(20, 24, 30, 0.92);
+            --line: rgba(255, 255, 255, 0.09);
+            --text: #f6f0e7;
+            --muted: #b1b7bc;
+            --gold: #d8ab68;
+            --gold-deep: #a97b3b;
+            --gold-soft: rgba(216, 171, 104, 0.14);
+            --green: #25d366;
+            --shadow: 0 26px 90px rgba(0, 0, 0, 0.42);
+            --radius: 28px;
+            --radius-sm: 18px;
+            --max: 1180px;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
         body {
-            font-family: 'Manrope', sans-serif;
+            font-family: 'Syne', sans-serif;
             color: var(--text);
             background:
-                radial-gradient(circle at 15% 20%, rgba(201, 160, 95, 0.14), transparent 25%),
-                radial-gradient(circle at 80% 15%, rgba(255, 255, 255, 0.06), transparent 18%),
-                radial-gradient(circle at 70% 80%, rgba(201, 160, 95, 0.08), transparent 25%),
-                linear-gradient(180deg, #0a0c0f 0%, #0d1115 50%, #0a0c0f 100%);
+                radial-gradient(circle at 10% 10%, rgba(216, 171, 104, 0.16), transparent 22%),
+                radial-gradient(circle at 86% 14%, rgba(255, 255, 255, 0.05), transparent 16%),
+                radial-gradient(circle at 72% 78%, rgba(216, 171, 104, 0.10), transparent 25%),
+                linear-gradient(180deg, #08090b 0%, #0c0f13 45%, #090b0d 100%);
             min-height: 100vh;
             overflow-x: hidden;
         }
@@ -46,41 +51,43 @@
             position: fixed;
             inset: 0;
             background-image:
-                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-            background-size: 72px 72px;
-            mask-image: radial-gradient(circle at center, black 35%, transparent 85%);
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 64px 64px;
+            mask-image: radial-gradient(circle at center, black 32%, transparent 84%);
             pointer-events: none;
-            z-index: -1;
+            z-index: -2;
         }
 
         a { color: inherit; text-decoration: none; }
-        img { display: block; width: 100%; }
+        img, video { display: block; width: 100%; }
 
         .container {
-            width: min(1160px, calc(100% - 2rem));
+            width: min(var(--max), calc(100% - 2rem));
             margin: 0 auto;
         }
 
         .topbar {
-            padding: 0.95rem 1rem;
+            position: relative;
+            z-index: 30;
+            padding: 0.85rem 1rem;
             text-align: center;
-            font-size: 0.75rem;
+            font-size: 0.76rem;
             letter-spacing: 0.24em;
             text-transform: uppercase;
             color: var(--gold);
             border-bottom: 1px solid var(--line);
-            background: rgba(7, 9, 11, 0.72);
-            backdrop-filter: blur(14px);
+            background: rgba(5, 7, 10, 0.82);
+            backdrop-filter: blur(16px);
         }
 
         .navbar {
             position: sticky;
             top: 0;
-            z-index: 20;
-            backdrop-filter: blur(18px);
-            background: rgba(11, 13, 16, 0.7);
+            z-index: 40;
+            background: rgba(9, 11, 13, 0.74);
             border-bottom: 1px solid var(--line);
+            backdrop-filter: blur(20px);
         }
 
         .navbar-inner {
@@ -88,189 +95,309 @@
             align-items: center;
             justify-content: space-between;
             gap: 1rem;
-            padding: 1rem 0;
+            padding: 0.95rem 0;
         }
 
         .brand {
-            font-family: 'Prata', serif;
-            font-size: 1.7rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.85rem;
+        }
+
+        .brand img {
+            height: 40px;
+            width: auto;
+        }
+
+        .brand-wordmark {
+            font-size: 0.82rem;
             letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--muted);
         }
 
         .nav-links {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
+            align-items: center;
+            gap: 1.15rem;
             color: var(--muted);
-            font-size: 0.95rem;
+            font-size: 0.92rem;
+        }
+
+        .nav-links a {
+            transition: color 0.2s ease;
         }
 
         .nav-links a:hover { color: var(--text); }
 
+        .nav-cta {
+            padding: 0.78rem 1.15rem;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #e8c183 0%, var(--gold) 100%);
+            color: #111;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+        }
+
         .hero {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 36px;
+            min-height: calc(100vh - 150px);
+            margin-top: 1.35rem;
+            background: #070809;
+            box-shadow: var(--shadow);
+        }
+
+        .hero video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.38;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(90deg, rgba(7, 8, 10, 0.90) 0%, rgba(7, 8, 10, 0.72) 42%, rgba(7, 8, 10, 0.46) 100%),
+                radial-gradient(circle at 20% 24%, rgba(216, 171, 104, 0.17), transparent 25%);
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            right: -120px;
+            bottom: -140px;
+            width: 420px;
+            height: 420px;
+            background: radial-gradient(circle, rgba(216, 171, 104, 0.26), transparent 68%);
+            z-index: 1;
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 2;
             display: grid;
-            grid-template-columns: 1.05fr 0.95fr;
+            grid-template-columns: 1.08fr 0.92fr;
             gap: 2rem;
-            align-items: center;
-            min-height: calc(100vh - 130px);
-            padding: 3rem 0 2rem;
+            align-items: end;
+            min-height: calc(100vh - 150px);
+            padding: clamp(2rem, 4vw, 4rem);
         }
 
         .eyebrow {
+            margin-bottom: 1rem;
             color: var(--gold);
             text-transform: uppercase;
-            letter-spacing: 0.22em;
+            letter-spacing: 0.24em;
             font-size: 0.72rem;
-            margin-bottom: 1rem;
         }
 
-        h1, h2, h3 { font-family: 'Prata', serif; font-weight: 400; }
+        .hero-logo {
+            width: min(430px, 85%);
+            margin-bottom: 1.2rem;
+            filter: drop-shadow(0 18px 44px rgba(0, 0, 0, 0.45));
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
 
         h1 {
-            font-size: clamp(3rem, 8vw, 5.7rem);
-            line-height: 0.94;
+            max-width: 720px;
+            font-size: clamp(3.4rem, 8vw, 6.7rem);
+            line-height: 0.88;
             margin-bottom: 1rem;
         }
 
         h2 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            line-height: 0.98;
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            line-height: 0.92;
         }
 
         h3 {
-            font-size: 1.35rem;
+            font-size: 1.7rem;
+            line-height: 1;
         }
 
         p {
             color: var(--muted);
-            line-height: 1.75;
+            line-height: 1.72;
+            font-size: 0.98rem;
         }
 
-        .hero-copy p { max-width: 620px; }
+        .hero-copy p {
+            max-width: 590px;
+            font-size: 1.02rem;
+        }
+
+        .hero-note {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-top: 1rem;
+            padding: 0.7rem 0.95rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.82rem;
+            color: #e7ddd0;
+        }
+
+        .hero-note::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--green);
+            box-shadow: 0 0 0 6px rgba(37, 211, 102, 0.12);
+        }
 
         .actions {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
-            margin: 2rem 0;
+            gap: 0.9rem;
+            margin: 2rem 0 1.4rem;
         }
 
         .button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            min-width: 170px;
-            padding: 1rem 1.25rem;
+            min-width: 168px;
+            padding: 1rem 1.2rem;
             border-radius: 999px;
-            font-size: 0.85rem;
-            font-weight: 800;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
             border: 1px solid var(--line);
-            transition: 0.25s ease;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
         }
 
         .button.primary {
-            background: linear-gradient(135deg, #deb87b 0%, var(--gold) 100%);
-            color: #111;
+            background: linear-gradient(135deg, #ecc98c 0%, var(--gold) 100%);
+            color: #0d0d0d;
             border: none;
         }
 
         .button.secondary {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.04);
             color: var(--text);
         }
 
-        .button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 14px 28px rgba(0,0,0,0.25);
+        .button:hover,
+        .whatsapp-btn:hover,
+        .product-card:hover,
+        .story-panel:hover,
+        .review-card:hover,
+        .contact-card:hover,
+        .feature-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .button:hover,
+        .whatsapp-btn:hover {
+            box-shadow: 0 16px 30px rgba(0, 0, 0, 0.25);
         }
 
         .hero-stats,
+        .trust-strip,
         .product-grid,
         .review-grid,
-        .info-grid,
-        .contact-grid {
+        .feature-grid,
+        .contact-grid,
+        .payment-grid,
+        .faq-list {
             display: grid;
             gap: 1rem;
         }
 
         .hero-stats {
             grid-template-columns: repeat(4, minmax(0, 1fr));
-            margin-top: 1rem;
         }
 
-        .card,
+        .stat,
+        .feature-card,
         .product-card,
         .review-card,
-        .info-card,
         .contact-card,
-        .hero-media {
+        .story-panel,
+        .countdown-wrap,
+        .video-feature,
+        .table-card,
+        .payment-card,
+        .newsletter,
+        .faq-item {
             background: var(--panel);
             border: 1px solid var(--line);
             border-radius: var(--radius);
             box-shadow: var(--shadow);
-            backdrop-filter: blur(14px);
-        }
-
-        .hero-media {
-            padding: 1rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-media::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(120deg, transparent 20%, rgba(255,255,255,0.1) 45%, transparent 70%);
-            transform: translateX(-120%);
-            animation: shine 8s ease-in-out infinite;
-            pointer-events: none;
-            z-index: 2;
-        }
-
-        .hero-media::after {
-            content: "";
-            position: absolute;
-            inset: auto -15% -35% auto;
-            width: 280px;
-            height: 280px;
-            background: radial-gradient(circle, rgba(201,160,95,0.22), transparent 70%);
-            pointer-events: none;
-        }
-
-        .hero-media img {
-            border-radius: 18px;
-            min-height: 560px;
-            object-fit: cover;
-            object-position: center top;
-            transform: scale(1.08);
-            animation: livePhoto 14s ease-in-out infinite;
-        }
-
-        @keyframes livePhoto {
-            0%, 100% { transform: scale(1.08) translate3d(0, 0, 0); }
-            25% { transform: scale(1.12) translate3d(-1.5%, -1%, 0); }
-            50% { transform: scale(1.1) translate3d(1.5%, -2%, 0); }
-            75% { transform: scale(1.13) translate3d(-1%, 1%, 0); }
-        }
-
-        @keyframes shine {
-            0%, 75%, 100% { transform: translateX(-120%); }
-            35%, 55% { transform: translateX(120%); }
+            backdrop-filter: blur(16px);
         }
 
         .stat {
             padding: 1rem;
-            text-align: center;
+            background: rgba(255, 255, 255, 0.04);
         }
 
         .stat strong {
             display: block;
+            margin-bottom: 0.18rem;
+            font-size: 1.4rem;
             color: var(--text);
-            font-size: 1.3rem;
-            margin-bottom: 0.25rem;
+        }
+
+        .hero-side {
+            display: grid;
+            gap: 1rem;
+            align-self: stretch;
+        }
+
+        .floating-card {
+            align-self: start;
+            margin-left: auto;
+            width: min(100%, 365px);
+            padding: 1.1rem;
+            border-radius: var(--radius);
+            background: rgba(15, 18, 22, 0.84);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            box-shadow: var(--shadow);
+        }
+
+        .floating-card img {
+            border-radius: 20px;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .floating-card h3 {
+            margin-bottom: 0.35rem;
+        }
+
+        .floating-meta {
+            display: flex;
+            justify-content: space-between;
+            gap: 0.8rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--line);
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--muted);
         }
 
         .section-head {
@@ -278,212 +405,150 @@
             justify-content: space-between;
             align-items: end;
             gap: 1rem;
-            padding: 4rem 0 1.5rem;
-            border-top: 1px solid var(--line);
+            padding: 5rem 0 1.4rem;
         }
 
-        .section-head p { max-width: 420px; }
-
-        .product-grid,
-        .review-grid,
-        .info-grid,
-        .contact-grid {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+        .section-head p {
+            max-width: 460px;
         }
 
-        .product-card,
-        .review-card,
-        .info-card,
-        .contact-card {
-            padding: 1rem;
+        .trust-strip {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            margin-top: 1.2rem;
         }
 
-        .contact-card.link-card {
-            transition: 0.25s ease;
+        .feature-card {
+            padding: 1.2rem;
         }
 
-        .contact-card.link-card:hover {
-            border-color: rgba(201, 160, 95, 0.45);
-            transform: translateY(-2px);
-        }
-
-        .contact-card.link-card a {
-            display: block;
-            width: 100%;
-            height: 100%;
-        }
-
-        .product-card img {
-            border-radius: 18px;
-            min-height: 310px;
-            object-fit: cover;
-            margin-bottom: 1rem;
-        }
-
-        .badge {
+        .feature-label {
             display: inline-block;
-            margin-bottom: 0.75rem;
-            padding: 0.35rem 0.75rem;
+            margin-bottom: 0.8rem;
+            padding: 0.34rem 0.7rem;
             border-radius: 999px;
             background: var(--gold-soft);
             color: var(--gold);
-            font-size: 0.72rem;
+            font-size: 0.7rem;
+            letter-spacing: 0.14em;
             text-transform: uppercase;
-            letter-spacing: 0.12em;
+        }
+
+        .product-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .product-card {
+            padding: 1rem;
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+
+        .product-card:hover,
+        .review-card:hover,
+        .contact-card:hover,
+        .feature-card:hover,
+        .story-panel:hover {
+            border-color: rgba(216, 171, 104, 0.38);
+        }
+
+        .product-image-wrap {
+            position: relative;
+            overflow: hidden;
+            border-radius: 22px;
+            margin-bottom: 1rem;
+        }
+
+        .product-image-wrap::after {
+            content: "";
+            position: absolute;
+            inset: auto 0 0;
+            height: 45%;
+            background: linear-gradient(180deg, transparent 0%, rgba(6, 8, 9, 0.76) 100%);
+        }
+
+        .product-card img {
+            min-height: 360px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .product-card:hover img { transform: scale(1.04); }
+
+        .badge {
+            display: inline-block;
+            margin-bottom: 0.7rem;
+            padding: 0.34rem 0.72rem;
+            border-radius: 999px;
+            background: var(--gold-soft);
+            color: var(--gold);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+        }
+
+        .product-card h3 { margin-bottom: 0.45rem; }
+
+        .product-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem;
+            margin: 0.9rem 0 1rem;
+        }
+
+        .product-chip {
+            padding: 0.42rem 0.68rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            color: #ddd2c5;
+            font-size: 0.74rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
 
         .price {
             display: flex;
+            align-items: center;
             gap: 0.8rem;
-            align-items: center;
-            margin: 1rem 0 0.6rem;
+            margin: 1rem 0 0.7rem;
         }
 
-        .price strong { color: var(--gold); font-size: 1.1rem; }
-        .price span { color: #6d7377; text-decoration: line-through; }
-
-        .countdown-wrap,
-        .newsletter,
-        .video-feature {
-            padding: 1.4rem;
-        }
-
-        .countdown {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .count-box {
-            text-align: center;
-            padding: 1rem;
-            border-radius: 18px;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid var(--line);
-        }
-
-        .count-box strong {
-            display: block;
-            font-size: 2.2rem;
+        .price strong {
             color: var(--gold);
+            font-size: 1.18rem;
         }
 
-        .newsletter form,
-        .contact-form {
-            display: grid;
-            gap: 1rem;
-            margin-top: 1.2rem;
+        .price span {
+            color: #6b7178;
+            text-decoration: line-through;
         }
 
-        .newsletter-row {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 1rem;
-        }
-
-        .video-shell {
-            display: grid;
-            grid-template-columns: 1.05fr 0.95fr;
-            gap: 1.25rem;
-            align-items: center;
-        }
-
-        .video-frame {
-            position: relative;
-            overflow: hidden;
-            border-radius: 20px;
-            border: 1px solid var(--line);
-            background: #000;
-        }
-
-        .video-frame video {
-            display: block;
-            width: 100%;
-            aspect-ratio: 16 / 10;
-            object-fit: cover;
-        }
-
-        .video-copy {
-            display: grid;
-            gap: 0.8rem;
-        }
-
-        input,
-        textarea {
-            width: 100%;
-            padding: 1rem;
-            border-radius: 16px;
-            border: 1px solid var(--line);
-            background: rgba(255,255,255,0.04);
-            color: var(--text);
-            font: inherit;
-        }
-
-        input:focus,
-        textarea:focus {
-            outline: none;
-            border-color: rgba(201,160,95,0.55);
-        }
-
-        .about {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .about img {
-            border-radius: var(--radius);
-            min-height: 450px;
-            object-fit: cover;
-        }
-
-        .faq-list {
-            display: grid;
-            gap: 1rem;
-        }
-
-        .faq-item {
-            padding: 1.2rem 1.3rem;
-        }
-
-        .faq-item h3 { margin-bottom: 0.5rem; }
-
-        .size-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
-        }
-
-        .size-table th,
-        .size-table td {
-            border: 1px solid var(--line);
-            padding: 0.95rem;
-            text-align: center;
-        }
-
-        .size-table th {
-            color: var(--gold);
-            background: rgba(201,160,95,0.08);
+        .size-title {
+            margin-top: 0.25rem;
+            margin-bottom: 0.55rem;
+            font-size: 0.78rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: #d6cab9;
         }
 
         .size-picker {
             display: flex;
+            flex-wrap: wrap;
             gap: 0.5rem;
-            margin: 0.8rem 0;
+            margin-bottom: 0.85rem;
         }
 
         .size-btn {
-            width: 42px;
-            height: 42px;
-            border-radius: 10px;
+            min-width: 46px;
+            height: 44px;
+            padding: 0 0.7rem;
+            border-radius: 12px;
             border: 1px solid var(--line);
-            background: rgba(255,255,255,0.04);
+            background: rgba(255, 255, 255, 0.04);
             color: var(--muted);
             font: inherit;
-            font-size: 0.85rem;
-            font-weight: 600;
+            font-size: 0.84rem;
+            font-weight: 700;
             cursor: pointer;
             transition: 0.2s ease;
         }
@@ -495,268 +560,547 @@
             color: var(--gold);
         }
 
-        .whatsapp-btn {
+        .product-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.7rem;
+            margin-top: 0.5rem;
+        }
+
+        .whatsapp-btn,
+        .ig-btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
-            width: 100%;
-            padding: 0.85rem 1rem;
-            margin-top: 0.75rem;
-            border-radius: 14px;
-            border: none;
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-            color: #fff;
-            font: inherit;
-            font-size: 0.9rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: 0.25s ease;
-        }
-
-        .whatsapp-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.25);
-        }
-
-        .sticky-bar {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            padding: 0.85rem 1rem;
-            background: rgba(11, 13, 16, 0.95);
-            backdrop-filter: blur(18px);
-            border-top: 1px solid var(--line);
-        }
-
-        .sticky-bar button {
-            width: 100%;
-            padding: 0.9rem 1rem;
-            border-radius: 14px;
-            border: none;
-            background: linear-gradient(135deg, #deb87b 0%, var(--gold) 100%);
-            color: #111;
-            font: inherit;
-            font-size: 0.9rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            cursor: pointer;
-        }
-
-        .payment-info {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            padding: 1rem;
-        }
-
-        .payment-card {
-            padding: 1rem;
+            padding: 0.95rem 1rem;
             border-radius: 16px;
+            font-size: 0.84rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: #fff;
+            border: none;
+        }
+
+        .ig-btn {
+            background: rgba(255, 255, 255, 0.04);
             border: 1px solid var(--line);
-            background: rgba(255,255,255,0.03);
+            color: var(--text);
+        }
+
+        .countdown-wrap,
+        .video-feature,
+        .table-card,
+        .newsletter {
+            padding: 1.4rem;
+        }
+
+        .countdown {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .count-box {
+            padding: 1.1rem;
+            text-align: center;
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--line);
+        }
+
+        .count-box strong {
+            display: block;
+            color: var(--gold);
+            font-size: 2.1rem;
+            margin-bottom: 0.1rem;
+        }
+
+        .video-shell,
+        .story-layout,
+        .newsletter-row {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 1.2rem;
+            align-items: center;
+        }
+
+        .video-frame {
+            overflow: hidden;
+            border-radius: 24px;
+            border: 1px solid var(--line);
+            background: #000;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+        }
+
+        .video-frame video {
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+        }
+
+        .video-copy,
+        .story-copy {
+            display: grid;
+            gap: 0.8rem;
+        }
+
+        .story-layout {
+            align-items: stretch;
+        }
+
+        .story-panel {
+            padding: 1.35rem;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .story-stat {
+            padding: 1rem;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .story-stat strong {
+            display: block;
+            color: var(--gold);
+            font-size: 1.45rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .story-image {
+            overflow: hidden;
+            border-radius: var(--radius);
+            border: 1px solid var(--line);
+        }
+
+        .story-image img {
+            min-height: 470px;
+            object-fit: cover;
+        }
+
+        .table-card { overflow: auto; }
+
+        .size-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .size-table th,
+        .size-table td {
+            border: 1px solid var(--line);
+            padding: 1rem;
             text-align: center;
         }
 
-        .payment-card h4 {
+        .size-table th {
+            background: rgba(216, 171, 104, 0.08);
             color: var(--gold);
-            margin-bottom: 0.4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 0.78rem;
+        }
+
+        .faq-list { grid-template-columns: 1fr; }
+
+        .faq-item {
+            padding: 1.25rem 1.35rem;
+        }
+
+        .faq-item h3 {
+            margin-bottom: 0.45rem;
+            font-size: 1.45rem;
+        }
+
+        .review-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .review-card {
+            padding: 1.2rem;
+            text-align: center;
+            transition: transform 0.25s ease, border-color 0.25s ease;
         }
 
         .review-card img {
-            width: 76px;
-            height: 76px;
+            width: 88px;
+            height: 88px;
             border-radius: 50%;
             object-fit: cover;
             margin: 0 auto 1rem;
             border: 2px solid var(--gold);
         }
 
-        .footer {
-            padding: 3rem 0 4rem;
-            color: #7d8387;
-            font-size: 0.95rem;
+        .stars {
+            margin-bottom: 0.65rem;
+            color: var(--gold);
+            letter-spacing: 0.18em;
         }
 
-        @media (max-width: 920px) {
-            .hero,
-            .about,
-            .section-head,
-            .navbar-inner,
+        .review-tag {
+            display: inline-block;
+            margin-top: 0.85rem;
+            padding: 0.32rem 0.72rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #dfd3c4;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+
+        .contact-grid,
+        .payment-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .contact-card,
+        .payment-card {
+            padding: 1.25rem;
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+
+        .contact-card h3,
+        .payment-card h3 {
+            margin-bottom: 0.45rem;
+        }
+
+        .contact-card.link-card a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .contact-card.link-card .button,
+        .contact-card .button {
+            width: 100%;
+            margin-top: 1rem;
+            min-width: 0;
+        }
+
+        .contact-form,
+        .newsletter form {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 16px;
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text);
+            font: inherit;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: rgba(216, 171, 104, 0.55);
+        }
+
+        .newsletter-row {
+            grid-template-columns: 1fr auto;
+        }
+
+        .newsletter-copy {
+            max-width: 540px;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 3rem 0 5.5rem;
+            color: #7e858a;
+            font-size: 0.92rem;
+        }
+
+        .sticky-bar {
+            display: none;
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 100;
+            padding: 0.9rem 1rem calc(0.9rem + env(safe-area-inset-bottom));
+            background: rgba(9, 11, 13, 0.94);
+            backdrop-filter: blur(18px);
+            border-top: 1px solid var(--line);
+        }
+
+        .sticky-inner {
+            width: min(var(--max), calc(100% - 0rem));
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 0.85rem;
+            align-items: center;
+        }
+
+        .sticky-copy strong {
+            display: block;
+            font-size: 0.88rem;
+            color: var(--text);
+        }
+
+        .sticky-copy span {
+            font-size: 0.74rem;
+            color: var(--muted);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .sticky-bar .button {
+            min-width: 150px;
+            padding: 0.95rem 1rem;
+        }
+
+        @media (max-width: 1040px) {
+            .hero-inner,
+            .video-shell,
+            .story-layout,
             .newsletter-row {
                 grid-template-columns: 1fr;
-                display: grid;
             }
 
-            .nav-links,
-            .navbar-inner { justify-content: start; }
-
-            .hero-stats,
-            .countdown,
+            .hero-side { align-self: start; }
+            .floating-card { margin-left: 0; }
             .product-grid,
             .review-grid,
-            .info-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
+            .contact-grid,
+            .payment-grid,
+            .trust-strip { grid-template-columns: 1fr 1fr; }
+            .story-grid { grid-template-columns: 1fr; }
+        }
 
-            .hero-media img,
-            .about img { min-height: 360px; }
-
-            .video-shell,
+        @media (max-width: 760px) {
+            .navbar-inner,
+            .section-head,
+            .footer,
             .newsletter-row {
+                display: grid;
                 grid-template-columns: 1fr;
             }
 
+            .nav-links {
+                gap: 0.8rem;
+                font-size: 0.88rem;
+            }
+
+            .nav-cta { display: none; }
+            .hero { min-height: auto; }
+            .hero-inner { min-height: auto; padding: 1.5rem; }
+            h1 { font-size: clamp(2.8rem, 16vw, 4.5rem); }
+            .hero-stats,
+            .trust-strip,
+            .product-grid,
+            .review-grid,
+            .contact-grid,
+            .payment-grid,
+            .countdown { grid-template-columns: 1fr; }
+            .product-actions { grid-template-columns: 1fr; }
+            .story-image img,
+            .floating-card img { min-height: 340px; }
             .sticky-bar { display: block; }
-
-            body { padding-bottom: 70px; }
-
-            .payment-info { grid-template-columns: 1fr; }
+            body { padding-bottom: 92px; }
+            .footer { padding-bottom: 6.8rem; }
         }
     </style>
 </head>
 <body>
-    <div class="topbar">GYMSHARK ONYX V5.0 RESTOCKED</div>
+    <div class="topbar">Lebanon cash on delivery - WhatsApp orders open now</div>
 
     <nav class="navbar">
         <div class="container navbar-inner">
-            <a href="#home" class="brand">LIFTED</a>
+            <a href="#home" class="brand" aria-label="LIFTED home">
+                <img src="logo.svg" alt="LIFTED logo">
+                <span class="brand-wordmark">Premium Gym Wear</span>
+            </a>
             <div class="nav-links">
                 <a href="#shop">Shop</a>
-                <a href="#about">About</a>
+                <a href="#story">Story</a>
                 <a href="#size-guide">Size Guide</a>
-                <a href="#faq">FAQ</a>
+                <a href="#reviews">Reviews</a>
                 <a href="#contact">Contact</a>
             </div>
+            <a href="https://wa.me/96170354726?text=Hi%20LIFTED,%20I%20want%20to%20order" class="nav-cta" target="_blank" rel="noopener noreferrer">Order Now</a>
         </div>
     </nav>
 
     <main class="container">
         <section id="home" class="hero">
-            <div class="hero-copy">
-                <p class="eyebrow">Premium Gymwear</p>
-                <h1>Lifted, rebuilt with a cleaner premium look.</h1>
-                <p>Same Lifted identity, same current shirts, but with a more polished landing page that feels ready to share online from a single file.</p>
-                <div class="actions">
-                    <a href="#shop" class="button primary">Shop Collection</a>
-                    <a href="#contact" class="button secondary">Reserve Now</a>
+            <video autoplay muted loop playsinline preload="metadata" poster="https://liftedlb.myshopify.com/cdn/shop/files/preview_images/1e49098305b54d39bc9f5a905d691493.thumbnail.0000000000_800x.jpg?v=1775671404">
+                <source src="https://liftedlb.myshopify.com/cdn/shop/videos/c/vp/1e49098305b54d39bc9f5a905d691493/1e49098305b54d39bc9f5a905d691493.HD-1080p-2.5Mbps-80742791.mp4?v=0" type="video/mp4">
+            </video>
+            <div class="hero-inner">
+                <div class="hero-copy">
+                    <p class="eyebrow">Onyx 5.0 Collection</p>
+                    <img src="logo.svg" alt="LIFTED" class="hero-logo">
+                    <h1>Engineered for the gym. Styled for everything after.</h1>
+                    <p>LIFTED brings the Onyx 5.0 drop into a cleaner, richer storefront with stronger visuals, better flow, and direct ordering that feels premium on both phone and desktop.</p>
+                    <div class="actions">
+                        <a href="#shop" class="button primary">Shop Collection</a>
+                        <a href="https://wa.me/96170354726?text=Hi%20LIFTED,%20I%20want%20to%20order" class="button secondary" target="_blank" rel="noopener noreferrer">WhatsApp Order</a>
+                    </div>
+                    <div class="hero-note">Live drop, limited stock, and direct ordering in minutes</div>
+                    <div class="hero-stats" style="margin-top:1.35rem;">
+                        <div class="stat"><strong>3</strong><span>Current colorways</span></div>
+                        <div class="stat"><strong>4.9/5</strong><span>Customer rating</span></div>
+                        <div class="stat"><strong>COD</strong><span>Across Lebanon</span></div>
+                        <div class="stat"><strong>80/20</strong><span>Performance blend</span></div>
+                    </div>
                 </div>
-                <div class="hero-stats">
-                    <div class="card stat"><strong>3</strong><span>Current shirts</span></div>
-                    <div class="card stat"><strong>$19.99</strong><span>Starting price</span></div>
-                    <div class="card stat"><strong>80/20</strong><span>Performance blend</span></div>
-                    <div class="card stat"><strong>2026</strong><span>Spring drop</span></div>
+                <div class="hero-side">
+                    <div class="floating-card">
+                        <img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsApp_Image_2026-04-06_at_5.00.11_PM_9406920f-480a-4466-9974-863124a109bf.jpg?v=1775523675&width=1600" alt="Lifted campaign image">
+                        <span class="badge">Best Seller Energy</span>
+                        <h3>Built to hold shape under pressure.</h3>
+                        <p>Lightweight feel, clean silhouette, and a finish that still looks sharp outside the gym.</p>
+                        <div class="floating-meta">
+                            <span>Black</span>
+                            <span>Gray</span>
+                            <span>Red</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="hero-media">
-                <img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsApp_Image_2026-04-06_at_5.00.11_PM_9406920f-480a-4466-9974-863124a109bf.jpg?v=1775523675&width=1600" alt="Lifted hero image">
-            </div>
+        </section>
+
+        <section class="trust-strip">
+            <article class="feature-card">
+                <span class="feature-label">Fast Order</span>
+                <h3>Direct checkout</h3>
+                <p>Pick your size and order instantly through WhatsApp or Instagram without a long checkout flow.</p>
+            </article>
+            <article class="feature-card">
+                <span class="feature-label">Payment</span>
+                <h3>Cash on delivery</h3>
+                <p>Simple payment for Lebanon customers. No advance payment needed to lock your order.</p>
+            </article>
+            <article class="feature-card">
+                <span class="feature-label">Fit</span>
+                <h3>Size-ready layout</h3>
+                <p>Every product card includes its size options directly so ordering feels faster and clearer.</p>
+            </article>
+            <article class="feature-card">
+                <span class="feature-label">Social Proof</span>
+                <h3>Real customer photos</h3>
+                <p>Stronger proof from actual buyers to make the page feel trusted, current, and alive.</p>
+            </article>
         </section>
 
         <section class="section-head" id="shop">
             <div>
-                <p class="eyebrow">Current Drop</p>
-                <h2>Onyx 5.0 Collection</h2>
+                <p class="eyebrow">Shop The Drop</p>
+                <h2>Pick your color. Lock your size. Order fast.</h2>
             </div>
-            <p>Sharper cards, cleaner spacing, stronger typography, and the same current shirts from the store.</p>
+            <p>Each product card is designed for quick ordering, with sizes, pricing, and direct message actions built in.</p>
         </section>
 
         <section class="product-grid">
-            <article class="product-card">
+            <article class="product-card" data-product="Onyx 5.0 Black">
+                <div class="product-image-wrap">
+                    <img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsAppImage2026-04-06at5.31.15PM.jpg?v=1775525499&width=1200" alt="Gymshark Onyx 5.0 Black">
+                </div>
                 <span class="badge">Restocked</span>
-                <img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsAppImage2026-04-06at5.31.15PM.jpg?v=1775525499&width=1200" alt="Gymshark Onyx 5.0 Black">
-                <h3>Gymshark Onyx 5.0 Black</h3>
-                <p>A sharp black training tee built for heavy sessions and clean daily fits.</p>
-                <div class="price"><strong>$19.99</strong><span>$24.99</span></div>
-                <div class="size-picker">
-                    <button type="button" class="size-btn" data-product="Onyx 5.0 Black" data-size="S">S</button>
-                    <button type="button" class="size-btn" data-product="Onyx 5.0 Black" data-size="M">M</button>
-                    <button type="button" class="size-btn" data-product="Onyx 5.0 Black" data-size="L">L</button>
-                    <button type="button" class="size-btn" data-product="Onyx 5.0 Black" data-size="XL">XL</button>
-                    <button type="button" class="size-btn" data-product="Onyx 5.0 Black" data-size="2XL">2XL</button>
+                <h3>Onyx 5.0 Black</h3>
+                <p>A sharp black training tee built for heavy sessions, clean layering, and everyday wear.</p>
+                <div class="product-meta">
+                    <span class="product-chip">Performance fit</span>
+                    <span class="product-chip">Most versatile</span>
+                    <span class="product-chip">Blackout finish</span>
                 </div>
-                <a href="https://wa.me/96170354726?text=Hi%20LIFTED,%20I%20want%20to%20order%20Onyx%205.0%20Black" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">Order via WhatsApp</a>
-                <a href="https://www.instagram.com/lifted.lb?igsh=aDU5Y20xcjZ3Ymg0" class="button secondary" style="margin-top:0.5rem;padding:0.7rem 1rem;font-size:0.8rem;" target="_blank" rel="noopener noreferrer">Message on Instagram</a>
+                <div class="price"><strong>$19.99</strong><span>$24.99</span></div>
+                <div class="size-title">Choose size</div>
+                <div class="size-picker">
+                    <button type="button" class="size-btn" data-size="S">S</button>
+                    <button type="button" class="size-btn" data-size="M">M</button>
+                    <button type="button" class="size-btn" data-size="L">L</button>
+                    <button type="button" class="size-btn" data-size="XL">XL</button>
+                    <button type="button" class="size-btn" data-size="2XL">2XL</button>
+                </div>
+                <div class="product-actions">
+                    <a href="https://wa.me/96170354726?text=Hi%20LIFTED,%20I%20want%20to%20order%20Onyx%205.0%20Black" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                    <a href="https://www.instagram.com/lifted.lb" class="ig-btn" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </div>
             </article>
 
-            <article class="product-card">
+            <article class="product-card" data-product="Onyx 5.0 Gray">
+                <div class="product-image-wrap">
+                    <img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsAppImage2026-04-06at5.31.20PM_1.jpg?v=1775529938&width=1200" alt="Gymshark Onyx 5.0 Gray">
+                </div>
                 <span class="badge">Best Seller</span>
-                <img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsAppImage2026-04-06at5.31.20PM_1.jpg?v=1775529938&width=1200" alt="Gymshark Onyx 5.0 Gray">
-                <h3>Gymshark Onyx 5.0 Gray</h3>
-                <p>Balanced stretch, lightweight structure, and a neutral tone that works everywhere.</p>
-                <div class="price"><strong>$19.99</strong><span>$24.99</span></div>
-                <div class="size-picker">
-                    <button type="button" class="size-btn" data-product="Onyx 5.0 Gray" data-size="S">S</button>
-                    <button type="button" class="size-btn" data-product="Onyx 5.0 Gray" data-size="M">M</button>
-                    <button type="button" class="size-btn" data-product="Onyx 5.0 Gray" data-size="L">L</button>
+                <h3>Onyx 5.0 Gray</h3>
+                <p>Balanced stretch, lightweight structure, and a neutral colorway that works everywhere.</p>
+                <div class="product-meta">
+                    <span class="product-chip">Daily wear</span>
+                    <span class="product-chip">Soft neutral</span>
+                    <span class="product-chip">Easy match</span>
                 </div>
-                <a href="https://wa.me/96170354726?text=Hi%20LIFTED,%20I%20want%20to%20order%20Onyx%205.0%20Gray" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">Order via WhatsApp</a>
+                <div class="price"><strong>$19.99</strong><span>$24.99</span></div>
+                <div class="size-title">Choose size</div>
+                <div class="size-picker">
+                    <button type="button" class="size-btn" data-size="S">S</button>
+                    <button type="button" class="size-btn" data-size="M">M</button>
+                    <button type="button" class="size-btn" data-size="L">L</button>
+                </div>
+                <div class="product-actions">
+                    <a href="https://wa.me/96170354726?text=Hi%20LIFTED,%20I%20want%20to%20order%20Onyx%205.0%20Gray" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                    <a href="https://www.instagram.com/lifted.lb" class="ig-btn" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </div>
             </article>
 
-            <article class="product-card">
+            <article class="product-card" data-product="Onyx 5.0 Red">
+                <div class="product-image-wrap">
+                    <img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsAppImage2026-04-06at5.31.18PM.jpg?v=1775525908&width=1200" alt="Gymshark Onyx 5.0 Red">
+                </div>
                 <span class="badge">Limited Drop</span>
-                <img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsAppImage2026-04-06at5.31.18PM.jpg?v=1775525908&width=1200" alt="Gymshark Onyx 5.0 Red">
-                <h3>Gymshark Onyx 5.0 Red</h3>
-                <p>A bold red colorway with the same breathable build and gym-ready comfort.</p>
-<div class="price"><strong>$19.99</strong><span>$24.99</span></div>
-                <div class="size-picker">
-                    <button type="button" class="size-btn" data-product="Onyx 5.0 Black" data-size="S">S</button>
-                    <button type="button" class="size-btn" data-product="Onyx 5.0 Black" data-size="M">M</button>
-                    <button type="button" class="size-btn" data-product="Onyx 5.0 Black" data-size="L">L</button>
-                    <button type="button" class="size-btn" data-product="Onyx 5.0 Black" data-size="XL">XL</button>
-                    <button type="button" class="size-btn" data-product="Onyx 5.0 Black" data-size="2XL">2XL</button>
+                <h3>Onyx 5.0 Red</h3>
+                <p>A bold red colorway with breathable comfort and enough edge to stand out immediately.</p>
+                <div class="product-meta">
+                    <span class="product-chip">Statement color</span>
+                    <span class="product-chip">Limited feel</span>
+                    <span class="product-chip">High contrast</span>
                 </div>
-                <a href="https://wa.me/96170354726?text=Hi%20LIFTED,%20I%20want%20to%20order%20Onyx%205.0%20Black" class="whatsapp-btn" target="_blank">Order via WhatsApp</a>
-                <a href="https://www.instagram.com/lifted.lb" class="button secondary" style="margin-top:0.5rem;padding:0.7rem 1rem;font-size:0.8rem;" target="_blank">Message on Instagram</a>
-            </article>
-
-            <article class="product-card">
-                <span class="badge">Best Seller</span>
-                <img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsAppImage2026-04-06at5.31.20PM_1.jpg?v=1775529938&width=1200" alt="Gymshark Onyx 5.0 Gray">
-                <h3>Gymshark Onyx 5.0 Gray</h3>
-                <p>Balanced stretch, lightweight structure, and a neutral tone that works everywhere.</p>
                 <div class="price"><strong>$19.99</strong><span>$24.99</span></div>
+                <div class="size-title">Choose size</div>
                 <div class="size-picker">
-                    <button type="button" class="size-btn" data-product="Onyx 5.0 Gray" data-size="S">S</button>
-                    <button type="button" class="size-btn" data-product="Onyx 5.0 Gray" data-size="M">M</button>
-                    <button type="button" class="size-btn" data-product="Onyx 5.0 Gray" data-size="L">L</button>
+                    <button type="button" class="size-btn" data-size="S">S</button>
+                    <button type="button" class="size-btn" data-size="M">M</button>
+                    <button type="button" class="size-btn" data-size="L">L</button>
+                    <button type="button" class="size-btn" data-size="XL">XL</button>
+                    <button type="button" class="size-btn" data-size="2XL">2XL</button>
                 </div>
-                <a href="https://wa.me/96170354726?text=Hi%20LIFTED,%20I%20want%20to%20order%20Onyx%205.0%20Gray" class="whatsapp-btn" target="_blank">Order via WhatsApp</a>
-                <a href="https://www.instagram.com/lifted.lb" class="button secondary" style="margin-top:0.5rem;padding:0.7rem 1rem;font-size:0.8rem;" target="_blank">Message on Instagram</a>
-            </article>
-
-            <article class="product-card">
-                <span class="badge">Limited Drop</span>
-                <img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsAppImage2026-04-06at5.31.18PM.jpg?v=1775525908&width=1200" alt="Gymshark Onyx 5.0 Red">
-                <h3>Gymshark Onyx 5.0 Red</h3>
-                <p>A bold red colorway with the same breathable build and gym-ready comfort.</p>
-                <div class="price"><strong>$19.99</strong><span>$24.99</span></div>
-                <div class="size-picker">
-                    <button type="button" class="size-btn" data-product="Onyx 5.0 Red" data-size="S">S</button>
-                    <button type="button" class="size-btn" data-product="Onyx 5.0 Red" data-size="M">M</button>
-                    <button type="button" class="size-btn" data-product="Onyx 5.0 Red" data-size="L">L</button>
-                    <button type="button" class="size-btn" data-product="Onyx 5.0 Red" data-size="XL">XL</button>
-                    <button type="button" class="size-btn" data-product="Onyx 5.0 Red" data-size="2XL">2XL</button>
+                <div class="product-actions">
+                    <a href="https://wa.me/96170354726?text=Hi%20LIFTED,%20I%20want%20to%20order%20Onyx%205.0%20Red" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                    <a href="https://www.instagram.com/lifted.lb" class="ig-btn" target="_blank" rel="noopener noreferrer">Instagram</a>
                 </div>
-                <a href="https://wa.me/96170354726?text=Hi%20LIFTED,%20I%20want%20to%20order%20Onyx%205.0%20Red" class="whatsapp-btn" target="_blank">Order via WhatsApp</a>
-                <a href="https://www.instagram.com/lifted.lb" class="button secondary" style="margin-top:0.5rem;padding:0.7rem 1rem;font-size:0.8rem;" target="_blank">Message on Instagram</a>
             </article>
         </section>
 
         <section class="section-head">
             <div>
-                <p class="eyebrow">Drop Timer</p>
-                <h2>Next Release Countdown</h2>
+                <p class="eyebrow">Release Clock</p>
+                <h2>Next drop countdown</h2>
             </div>
-            <p>Built into this single page so the site still feels dynamic even without a backend.</p>
+            <p>A live timer keeps the page active and pushes more urgency without needing a backend.</p>
         </section>
 
-        <section class="card countdown-wrap">
+        <section class="countdown-wrap">
             <div class="countdown">
                 <div class="count-box"><strong id="days">0</strong><span>Days</span></div>
                 <div class="count-box"><strong id="hours">0</strong><span>Hours</span></div>
@@ -767,131 +1111,193 @@
 
         <section class="section-head">
             <div>
-                <p class="eyebrow">Dropping Next</p>
-                <h2>Live teaser section</h2>
+                <p class="eyebrow">Motion</p>
+                <h2>Live teaser, cleaner presentation</h2>
             </div>
-            <p>I added the same public autoplay teaser video from the old Shopify site, but placed it in a cleaner premium section.</p>
+            <p>The Shopify teaser now sits in a dedicated premium block instead of feeling like a random embed.</p>
         </section>
 
-        <section class="card video-feature">
+        <section class="video-feature">
             <div class="video-shell">
                 <div class="video-frame">
                     <video autoplay muted loop playsinline preload="metadata" poster="https://liftedlb.myshopify.com/cdn/shop/files/preview_images/1e49098305b54d39bc9f5a905d691493.thumbnail.0000000000_800x.jpg?v=1775671404">
                         <source src="https://liftedlb.myshopify.com/cdn/shop/videos/c/vp/1e49098305b54d39bc9f5a905d691493/1e49098305b54d39bc9f5a905d691493.HD-1080p-2.5Mbps-80742791.mp4?v=0" type="video/mp4">
-                        <img src="https://liftedlb.myshopify.com/cdn/shop/files/preview_images/1e49098305b54d39bc9f5a905d691493.thumbnail.0000000000_800x.jpg?v=1775671404" alt="Lifted upcoming drop preview">
                     </video>
                 </div>
                 <div class="video-copy">
                     <span class="badge">Coming Soon</span>
-                    <h3>Stay tuned for our next exclusive drop.</h3>
-                    <p>This section keeps the motion from the old store, but presents it in a cleaner layout with better spacing, clearer messaging, and a stronger premium feel.</p>
-                    <a href="#contact" class="button primary">Get Notified</a>
+                    <h3>Made to keep the brand feeling alive between drops.</h3>
+                    <p>Motion gives the storefront more presence, better atmosphere, and a stronger premium feel the second someone lands on the page.</p>
+                    <div class="actions" style="margin:0.5rem 0 0;">
+                        <a href="#contact" class="button primary">Get Notified</a>
+                        <a href="https://www.instagram.com/lifted.lb" class="button secondary" target="_blank" rel="noopener noreferrer">Follow On Instagram</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="section-head">
+        <section class="section-head" id="story">
             <div>
-                <p class="eyebrow">Why Lifted</p>
-                <h2>The Lifted Standard</h2>
+                <p class="eyebrow">Brand Story</p>
+                <h2>Built sharper than the average gym page.</h2>
             </div>
-            <p>Simple value props that make the page feel more complete and professional.</p>
+            <p>LIFTED should feel like a brand with intention, not just a product list. This section adds that extra weight.</p>
         </section>
 
-        <section class="info-grid">
-            <article class="info-card"><h3>Premium Quality</h3><p>80% polyester and 20% nylon for performance, comfort, and everyday wear.</p></article>
-            <article class="info-card"><h3>Limited Drops</h3><p>A tighter collection strategy that keeps the brand feeling exclusive.</p></article>
-            <article class="info-card"><h3>Fast Contact</h3><p>Built for direct Instagram or message-based reservations and inquiries.</p></article>
-        </section>
-
-        <section class="section-head" id="about">
-            <div>
-                <p class="eyebrow">About</p>
-                <h2>Built different. Built Lifted.</h2>
-            </div>
-            <p>A stronger brand section makes the store feel less basic and more trustworthy.</p>
-        </section>
-
-        <section class="about">
-            <div class="card" style="padding:1.4rem;">
-                <p>LIFTED is built around premium gymwear with a sharper visual identity. This version keeps the core products but upgrades the experience into a cleaner, more premium digital storefront that works well as a single uploaded file.</p>
-                <div class="info-grid" style="grid-template-columns:repeat(3, minmax(0, 1fr)); margin-top:1rem;">
-                    <article class="info-card"><h3>2026</h3><p>Brand momentum</p></article>
-                    <article class="info-card"><h3>3K+</h3><p>Customer energy</p></article>
-                    <article class="info-card"><h3>50+</h3><p>Countries reached</p></article>
+        <section class="story-layout">
+            <div class="story-panel story-copy">
+                <span class="badge">The Lifted Standard</span>
+                <h3>Minimal noise. Strong fit. Better presence.</h3>
+                <p>LIFTED is built around clean training pieces that feel focused, wearable, and premium. The goal is simple: make the product look strong online before it even reaches the customer.</p>
+                <p>Everything here is shaped for a quicker first impression - better typography, more confident spacing, clearer ordering, and stronger social proof.</p>
+                <div class="story-grid">
+                    <div class="story-stat"><strong>3K+</strong><span>Community energy</span></div>
+                    <div class="story-stat"><strong>4.9</strong><span>Average rating</span></div>
+                    <div class="story-stat"><strong>50+</strong><span>Places reached</span></div>
                 </div>
             </div>
-            <img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsApp_Image_2026-04-06_at_5.00.11_PM_9406920f-480a-4466-9974-863124a109bf.jpg?v=1775523675&width=1200" alt="Lifted lifestyle visual">
+            <div class="story-image">
+                <img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsApp_Image_2026-04-06_at_5.00.11_PM_9406920f-480a-4466-9974-863124a109bf.jpg?v=1775523675&width=1200" alt="Lifted lifestyle visual">
+            </div>
         </section>
 
         <section class="section-head" id="size-guide">
             <div>
                 <p class="eyebrow">Size Guide</p>
-                <h2>Find Your Fit</h2>
+                <h2>Fit made simple</h2>
             </div>
-            <p>Helpful sizing info keeps the store practical, not just stylish.</p>
+            <p>Give buyers confidence before they message you by keeping the fit details clean and easy to scan.</p>
         </section>
 
-        <section class="card" style="padding:1.4rem; overflow:auto;">
+        <section class="table-card">
             <table class="size-table">
                 <thead>
-                    <tr><th>Size</th><th>Chest</th><th>Length</th><th>Fit</th></tr>
+                    <tr>
+                        <th>Size</th>
+                        <th>Chest</th>
+                        <th>Length</th>
+                        <th>Fit</th>
+                    </tr>
                 </thead>
                 <tbody>
-                    <tr><td>S</td><td>34-36</td><td>26</td><td>Regular</td></tr>
-                    <tr><td>M</td><td>38-40</td><td>27</td><td>Regular</td></tr>
-                    <tr><td>L</td><td>42-44</td><td>28</td><td>Regular</td></tr>
-                    <tr><td>XL</td><td>46-48</td><td>29</td><td>Regular</td></tr>
-                    <tr><td>2XL</td><td>50-52</td><td>30</td><td>Regular</td></tr>
+                    <tr><td>S</td><td>34-36</td><td>26</td><td>Regular athletic</td></tr>
+                    <tr><td>M</td><td>38-40</td><td>27</td><td>Regular athletic</td></tr>
+                    <tr><td>L</td><td>42-44</td><td>28</td><td>Regular athletic</td></tr>
+                    <tr><td>XL</td><td>46-48</td><td>29</td><td>Relaxed athletic</td></tr>
+                    <tr><td>2XL</td><td>50-52</td><td>30</td><td>Relaxed athletic</td></tr>
                 </tbody>
             </table>
+        </section>
+
+        <section class="section-head" id="reviews">
+            <div>
+                <p class="eyebrow">Social Proof</p>
+                <h2>Real buyers. Real reactions.</h2>
+            </div>
+            <p>Customer photos and clear ratings make the site feel more trusted and much more ready to share.</p>
+        </section>
+
+        <section class="review-grid">
+            <article class="review-card">
+                <img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsApp_Image_2026-04-17_at_14.51.48_aec4794c-a997-40fd-a2d3-42b0b3575ce3.jpg?v=1776463580&width=600" alt="Mhmd Arnaout">
+                <div class="stars">★★★★★</div>
+                <h3>Mhmd Arnaout</h3>
+                <p>"Perfect."</p>
+                <span class="review-tag">Clean fit</span>
+            </article>
+            <article class="review-card">
+                <img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsApp_Image_2026-04-18_at_08.53.43.jpg?v=1776527880&width=600" alt="Mohammad">
+                <div class="stars">★★★★★</div>
+                <h3>Mohammad</h3>
+                <p>"shi mratab."</p>
+                <span class="review-tag">Daily wear</span>
+            </article>
+            <article class="review-card">
+                <img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsApp_Image_2026-04-17_at_14.54.06.jpg?v=1776527454&width=600" alt="Ahmad">
+                <div class="stars">★★★★★</div>
+                <h3>Ahmad</h3>
+                <p>"Quality mratabe."</p>
+                <span class="review-tag">Premium feel</span>
+            </article>
         </section>
 
         <section class="section-head" id="faq">
             <div>
                 <p class="eyebrow">FAQ</p>
-                <h2>Common Questions</h2>
+                <h2>Everything customers ask before ordering</h2>
             </div>
-            <p>Enough answers to make the page feel ready for visitors.</p>
+            <p>A tighter FAQ removes friction and reduces the need for repetitive DMs.</p>
         </section>
 
         <section class="faq-list">
-            <article class="card faq-item"><h3>How long does shipping take?</h3><p>Standard shipping usually takes 5-10 business days depending on location.</p></article>
-            <article class="card faq-item"><h3>Do you ship worldwide?</h3><p>Yes, the store layout supports a global audience and limited product drops.</p></article>
-            <article class="card faq-item"><h3>What if I am between sizes?</h3><p>Go one size up for a more relaxed fit, or stay true to size for a regular athletic fit.</p></article>
+            <article class="faq-item">
+                <h3>How do I order?</h3>
+                <p>Pick your size, tap WhatsApp or Instagram, and send your order directly. We confirm the details with you fast.</p>
+            </article>
+            <article class="faq-item">
+                <h3>How does payment work?</h3>
+                <p>For Lebanon orders, payment is cash on delivery. You pay when the order arrives.</p>
+            </article>
+            <article class="faq-item">
+                <h3>What if I am between sizes?</h3>
+                <p>Go one size up for a more relaxed look, or stay true to size for a closer athletic fit.</p>
+            </article>
         </section>
 
         <section class="section-head">
             <div>
-                <p class="eyebrow">Reviews</p>
-                <h2>What Customers Say</h2>
+                <p class="eyebrow">Shipping & Payment</p>
+                <h2>Simple ordering, no messy checkout</h2>
             </div>
-            <p>Real social proof from the current public storefront.</p>
+            <p>This keeps the brand easy to buy from while still feeling polished and premium.</p>
         </section>
 
-        <section class="review-grid">
-            <article class="review-card"><img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsApp_Image_2026-04-17_at_14.51.48_aec4794c-a997-40fd-a2d3-42b0b3575ce3.jpg?v=1776463580&width=600" alt="Mhmd Arnaout"><div style="color:var(--gold);margin-bottom:0.5rem;">★★★★★</div><h3>Mhmd Arnaout</h3><p>"Perfect."</p></article>
-            <article class="review-card"><img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsApp_Image_2026-04-18_at_08.53.43.jpg?v=1776527880&width=600" alt="Mohammad"><div style="color:var(--gold);margin-bottom:0.5rem;">★★★★★</div><h3>Mohammad</h3><p>"shi mratab."</p></article>
-            <article class="review-card"><img src="https://liftedlb.myshopify.com/cdn/shop/files/WhatsApp_Image_2026-04-17_at_14.54.06.jpg?v=1776527454&width=600" alt="Ahmad"><div style="color:var(--gold);margin-bottom:0.5rem;">★★★★★</div><h3>Ahmad</h3><p>"Quality mratabe."</p></article>
+        <section class="payment-grid">
+            <article class="payment-card">
+                <span class="badge">Payment</span>
+                <h3>Cash on delivery</h3>
+                <p>Customers in Lebanon can order now and pay when the package arrives.</p>
+            </article>
+            <article class="payment-card">
+                <span class="badge">Delivery</span>
+                <h3>Fast local shipping</h3>
+                <p>Typical delivery takes 5-10 business days depending on location and order volume.</p>
+            </article>
+            <article class="payment-card">
+                <span class="badge">Support</span>
+                <h3>Direct confirmation</h3>
+                <p>Every order is confirmed through chat, which makes questions, sizes, and colors easier to handle.</p>
+            </article>
         </section>
 
         <section class="section-head" id="contact">
             <div>
                 <p class="eyebrow">Contact</p>
-                <h2>Reserve Your Piece</h2>
+                <h2>Reserve your piece now</h2>
             </div>
-            <p>Direct contact block for Instagram, inquiries, and quick reservations.</p>
+            <p>Fast entry points for buyers who want to order, ask for size help, or follow the next release.</p>
         </section>
 
         <section class="contact-grid">
-            <article class="contact-card link-card"><a href="https://www.instagram.com/lifted.lb?igsh=aDU5Y20xcjZ3Ymg0" target="_blank" rel="noopener noreferrer"><h3>Instagram</h3><p>@lifted.lb</p></a></article>
-            <article class="contact-card"><h3>Launch Date</h3><p>April 30, 2026</p></article>
+            <article class="contact-card link-card">
+                <span class="badge">Instagram</span>
+                <h3>@lifted.lb</h3>
+                <p>Use Instagram for DMs, drops, and daily brand updates.</p>
+                <a href="https://www.instagram.com/lifted.lb" target="_blank" rel="noopener noreferrer" class="button secondary">Open Instagram</a>
+            </article>
+            <article class="contact-card link-card">
+                <span class="badge">WhatsApp</span>
+                <h3>70 354 726</h3>
+                <p>Best option for direct orders, fast replies, and confirming sizes.</p>
+                <a href="https://wa.me/96170354726?text=Hi%20LIFTED,%20I%20want%20to%20order" target="_blank" rel="noopener noreferrer" class="button primary">Start Order</a>
+            </article>
             <article class="contact-card">
-                <h3>Quick Message</h3>
-                <form class="contact-form" onsubmit="event.preventDefault(); this.innerHTML='<p style=&quot;color:var(--gold)&quot;>Thanks, your message is ready.</p>';">
+                <span class="badge">Quick Message</span>
+                <h3>Need help choosing?</h3>
+                <form class="contact-form" onsubmit="event.preventDefault(); this.innerHTML='<p style=&quot;color:#d8ab68&quot;>Your message is ready - use WhatsApp for the fastest reply.</p>';">
                     <input type="text" placeholder="Your name" required>
-                    <textarea rows="4" placeholder="Size, color, or question..."></textarea>
-                    <button class="button primary" type="submit">Send</button>
+                    <textarea rows="4" placeholder="Ask about size, color, or delivery..."></textarea>
+                    <button class="button secondary" type="submit">Prepare Message</button>
                 </form>
             </article>
         </section>
@@ -899,13 +1305,13 @@
         <section class="section-head">
             <div>
                 <p class="eyebrow">Newsletter</p>
-                <h2>Join The Drop List</h2>
+                <h2>Join the next drop list</h2>
             </div>
-            <p>Simple signup block to capture interest before the next launch.</p>
+            <p class="newsletter-copy">Keep a lightweight sign-up block on the page so people can stay connected before the next release.</p>
         </section>
 
-        <section class="card newsletter">
-            <form onsubmit="event.preventDefault(); this.innerHTML='<p style=&quot;color:var(--gold)&quot;>You are on the list.</p>';">
+        <section class="newsletter">
+            <form onsubmit="event.preventDefault(); this.innerHTML='<p style=&quot;color:#d8ab68&quot;>You are on the list.</p>';">
                 <div class="newsletter-row">
                     <input type="email" placeholder="Your email" required>
                     <button class="button primary" type="submit">Subscribe</button>
@@ -913,33 +1319,20 @@
             </form>
         </section>
 
-        <section class="section-head">
-            <div>
-                <p class="eyebrow">Shipping & Payment</p>
-                <h2>How It Works</h2>
-            </div>
-            <p>Simple setup for Lebanon customers.</p>
-        </section>
-
-        <section class="card" style="padding:1.4rem;">
-            <div class="payment-info">
-                <article class="payment-card">
-                    <h4>Cash on Delivery</h4>
-                    <p>Pay when you receive your order. No advance payment needed.</p>
-                </article>
-                <article class="payment-card">
-                    <h4>Delivery</h4>
-                    <p>5-10 business days across Lebanon. Free for orders over $50.</p>
-                </article>
-            </div>
-        </section>
         <div class="footer">
-            <strong>LIFTED</strong> - clean one-page version ready to upload as a single `index.html`.
+            <div><strong>LIFTED</strong> - premium one-page storefront</div>
+            <div>Built for GitHub Pages, WhatsApp orders, and easy sharing</div>
         </div>
     </main>
 
     <div class="sticky-bar">
-        <a href="#shop">Order Now</a>
+        <div class="sticky-inner">
+            <div class="sticky-copy">
+                <strong>Onyx 5.0 available now</strong>
+                <span>Direct WhatsApp ordering</span>
+            </div>
+            <a href="https://wa.me/96170354726?text=Hi%20LIFTED,%20I%20want%20to%20order" class="button primary" target="_blank" rel="noopener noreferrer">Order Now</a>
+        </div>
     </div>
 
     <script>
@@ -953,6 +1346,7 @@
                 mins: Math.floor((diff / (1000 * 60)) % 60),
                 secs: Math.floor((diff / 1000) % 60)
             };
+
             Object.entries(values).forEach(([key, value]) => {
                 const el = document.getElementById(key);
                 if (el) el.textContent = value;
@@ -962,17 +1356,18 @@
         updateCountdown();
         setInterval(updateCountdown, 1000);
 
-        document.querySelectorAll('.size-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const picker = this.closest('.size-picker');
-                picker.querySelectorAll('.size-btn').forEach(b => b.classList.remove('selected'));
-                this.classList.add('selected');
-                const product = this.dataset.product;
-                const size = this.dataset.size;
-                const link = picker.nextElementSibling;
-                if (link && link.classList.contains('whatsapp-btn')) {
-                    link.href = `https://wa.me/96170354726?text=Hi%20LIFTED,%20I%20want%20to%20order%20${encodeURIComponent(product)}%20size%20${size}`;
-                }
+        document.querySelectorAll('.product-card').forEach(card => {
+            const product = card.dataset.product;
+            const whatsappLink = card.querySelector('.whatsapp-btn');
+            const buttons = card.querySelectorAll('.size-btn');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    buttons.forEach(btn => btn.classList.remove('selected'));
+                    this.classList.add('selected');
+                    const size = this.dataset.size;
+                    whatsappLink.href = `https://wa.me/96170354726?text=Hi%20LIFTED,%20I%20want%20to%20order%20${encodeURIComponent(product)}%20size%20${encodeURIComponent(size)}`;
+                });
             });
         });
     </script>
